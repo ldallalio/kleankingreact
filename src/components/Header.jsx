@@ -1,6 +1,17 @@
 import React from 'react';
 import Logo from '../assets/logo/KleanKingLogo.png';
 function Header() {
+	const showMenu = () => {
+		const menu = document.getElementById('mobileMenuContent');
+		if (menu.style.display === 'none') {
+			menu.style.display = 'flex';
+			menu.style.opacity = '1';
+		} else {
+			menu.style.display = 'none';
+			menu.style.opacity = '0';
+		}
+	};
+
 	return (
 		<div className='headerContainer'>
 			<div className='logo'>
@@ -25,8 +36,26 @@ function Header() {
 					</li>
 				</ul>
 			</div>
+			<div onClick={showMenu} className='mobileMenuIcon'>
+				| | |
+			</div>
 			<div className='mobileMenu'>
-				<div className='mobileMenuIcon'>| | | </div>
+				<div className='mobileMenuContent' id='mobileMenuContent'>
+					<ul>
+						<li className='menuItem'>
+							<a href='/'>Home</a>
+						</li>
+						<li className='menuItem'>
+							<a href='#about'>About</a>
+						</li>
+						<li className='menuItem'>
+							<a href='#services'>Our Services</a>
+						</li>
+						<li className='menuItem getQuote'>
+							<a href='#services'>Get Quote</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div className='getQuote'>
 				<a href='tel:2252879379'>Get a Quote</a>
