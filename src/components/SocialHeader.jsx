@@ -4,7 +4,7 @@ function SocialHeader() {
 	return (
 		<div className='socialHeaderContainer'>
 			<div className='socialEmailIcon'>
-				<a href='#'>
+				<a href='mailto:kleankingcarpet@att.net'>
 					<svg
 						width='20'
 						height='20'
@@ -38,7 +38,7 @@ function SocialHeader() {
 				</a>
 			</div>
 			<div className='socialEmail'>
-				<a href=''>kleankingcarpet@att.net</a>
+				<a href='mailto:kleankingcarpet@att.net'>kleankingcarpet@att.net</a>
 			</div>
 			<div className='socialPhoneIcon'>
 				<a href='tel:2252879379'>
