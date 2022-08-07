@@ -9,24 +9,24 @@ function Header() {
 			<div className='navMenu'>
 				<ul>
 					<li className='menuItem active'>
-						<a href='#'>Home</a>
+						<a href='/'>Home</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#'>About</a>
+						<a href='#about'>About</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#'>Our Services</a>
+						<a href='#services'>Our Services</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#'>Our Work</a>
+						<a href='#portfolio'>Our Work</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#'>Contact</a>
+						<a href='#contactus'>Contact</a>
 					</li>
 				</ul>
 			</div>
 			<div className='getQuote'>
-				<a href='#'>Get a Quote</a>
+				<a href='tel:2252879379'>Get a Quote</a>
 			</div>
 		</div>
 	);
