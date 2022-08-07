@@ -163,3 +163,27 @@ li.active  a{
   }
 
 }
+
+
+
+/* ********************************************************************** */
+/* ********************************************************************** */
+/* *********************       Hero Section       *********************** */
+/* ********************************************************************** */
+/* ********************************************************************** */
+
+.heroContainer{
+  height: calc(100vh - 138px);
+  background-image: url(./assets/images/heroImage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.heroContent{
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  width:60%;
+}
+
