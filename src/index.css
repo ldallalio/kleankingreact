@@ -173,14 +173,16 @@ li.active  a{
   .navMenu{
     display:none;
   }
+  
 
   .logo img{
     margin-left:-60px;
   }
 
   .mobileMenuIcon{
+    text-align: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     right: 0;
     margin-right: 40px;
     width:50px;
@@ -191,6 +193,7 @@ li.active  a{
     display: flex;;
     align-items: center;
     height:100%;
+    
   }
   
   .mobileMenuContent {

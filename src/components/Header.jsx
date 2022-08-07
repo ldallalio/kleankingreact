@@ -3,12 +3,15 @@ import Logo from '../assets/logo/KleanKingLogo.png';
 function Header() {
 	const showMenu = () => {
 		const menu = document.getElementById('mobileMenuContent');
+		let hero = document.getElementsByClassName('heroContainer');
 		if (menu.style.display === 'none') {
 			menu.style.display = 'flex';
 			menu.style.opacity = '1';
+			hero[0].style.position = 'fixed';
 		} else {
 			menu.style.display = 'none';
 			menu.style.opacity = '0';
+			hero[0].style.position = 'static';
 		}
 	};
 
