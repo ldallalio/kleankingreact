@@ -61,11 +61,16 @@ code {
 
 
 @media screen and (max-width: 600px) {
-  .socialIcons{
+  /* .socialIcons{
     display:none;
-  }
+  } */
   .socialEmail, .socialEmailIcon{
     display:none;
   }
 }
   
+
+a {
+  text-decoration: none;
+  color:white
+}
