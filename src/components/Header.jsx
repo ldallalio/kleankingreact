@@ -25,6 +25,9 @@ function Header() {
 					</li>
 				</ul>
 			</div>
+			<div className='mobileMenu'>
+				<div className='mobileMenuIcon'>| | | </div>
+			</div>
 			<div className='getQuote'>
 				<a href='tel:2252879379'>Get a Quote</a>
 			</div>

@@ -156,13 +156,26 @@ li.active  a{
   color:red !important;
 }
 
+.mobileMenu{
+  display: none;
+ 
+}
 
 @media screen and (max-width: 800px) {
   .navMenu{
     display:none;
   }
 
+  .mobileMenu{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin-left:-140px;
+  }
+
 }
+
 
 
 
