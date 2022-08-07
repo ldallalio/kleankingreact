@@ -184,6 +184,78 @@ li.active  a{
 .heroContent{
   background: rgb(255,255,255);
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  width:60%;
+  width:70%;
 }
 
+.heroText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top:8rem;
+  width:35em;
+  margin-left:10rem
+}
+
+.heroText h1{
+  font-size:3.5rem;
+  font-weight:bold;
+  color:rgb(22, 70, 135);
+  margin-bottom:1rem;
+}
+
+.heroText .getQuote a{
+ border-radius: 0px;
+ width:200px;
+ text-align: center;
+}
+
+.heroText .getQuote {
+  display:flex;
+  margin-top:1rem;
+  margin-left: -150px;
+  
+}
+
+.getQuote   a:hover {
+  background-color: white;
+  color:rgb(22, 70, 135);
+  border: 2px solid red;
+}
+
+
+@media screen and (max-width: 650px) {
+    
+
+    .heroContainer{
+      background-image: url('./assets/images/heroImageMobile.png');
+      background-size: cover;
+      background-position: top;
+
+
+    }
+
+    .heroContent{
+      width:100%;
+      background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.393) 0%, rgba(255,255,255,0) 100%);
+
+    }
+
+    .heroText{
+      text-align: center;
+      width:100%;
+      margin:0;
+    }
+
+    .heroText .getQuote {
+      margin-left:10rem;
+    }
+
+    .heroText h1{
+      font-size:3.5rem;
+      color:white;
+      text-shadow: rgba(0, 0, 0, 0.254) 0.1em 0.1em 0.2em;
+    }
+
+}

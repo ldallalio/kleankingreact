@@ -4,7 +4,12 @@ function HeroSection() {
 	return (
 		<div className='heroContainer'>
 			<div className='heroContent'>
-				<h1>Hero Content</h1>
+				<div className='heroText'>
+					<h1>When Calamity Strikes Klean King Has You Covered</h1>
+					<div className='getQuote'>
+						<a href='tel:2252879379'>Get a Quote</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
