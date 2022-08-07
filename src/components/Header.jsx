@@ -51,6 +51,9 @@ function Header() {
 						<li className='menuItem'>
 							<a href='#services'>Our Services</a>
 						</li>
+						<li className='menuItem'>
+							<a href='#portfolio'>Our Work</a>
+						</li>
 						<li className='menuItem getQuote'>
 							<a href='#services'>Get Quote</a>
 						</li>
