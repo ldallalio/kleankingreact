@@ -7,6 +7,7 @@ function Header() {
 		if (menu.style.display === 'none') {
 			menu.style.display = 'flex';
 			menu.style.opacity = '1';
+			menu.style.transition = '3s ease-in-out';
 			hero[0].style.position = 'fixed';
 		} else {
 			menu.style.display = 'none';

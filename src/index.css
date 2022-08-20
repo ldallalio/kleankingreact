@@ -372,7 +372,7 @@ li.active a {
 		grid-template-columns: repeat(2, minmax(250px, 1fr));
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.services {
 		grid-template-columns: repeat(1, minmax(250px, 1fr));
 	}
