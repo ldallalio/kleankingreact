@@ -385,6 +385,7 @@ li.active a {
 	justify-content: center;
 	min-width: 250px;
 	width: 250px;
+	margin-top: 0;
 }
 
 .service p {
@@ -414,4 +415,60 @@ li.active a {
 .service:hover svg circle {
 	fill: gold !important;
 	transition: all 0.3s ease-in-out;
+}
+
+.servicesContainer h4 {
+	font-weight: 400;
+	color: rgb(209, 29, 35);
+	font-size: 1.4em;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.service h3 {
+	font-weight: bold;
+	color: black;
+	font-size: 1.4em;
+	text-align: center;
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+.service p {
+	color: rgb(22, 70, 135);
+	font-size: 1em;
+	text-align: center;
+	margin-bottom: 0;
+	padding: 1em;
+	margin-top: 0;
+}
+
+/* ********************************************************************** */
+/* ********************************************************************** */
+/* *********************      About Section        ********************** */
+/* ********************************************************************** */
+/* ********************************************************************** */
+
+.aboutContainer {
+	padding: 2em;
+	background-color: rgb(255, 255, 255);
+	display: flex;
+	flex-flow: column;
+	flex-flow: row;
+	width: 90%;
+	padding: 1em;
+}
+
+.aboutImage {
+	background-image: url('./assets/images/truckwithbox.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	min-height: 500px;
+}
+
+.about {
+	width: 70%;
+	padding: 3em;
 }

@@ -47,7 +47,7 @@ function Services() {
 	];
 	return (
 		<div class='servicesContainer'>
-			<h4>Klean King</h4>
+			<h4>Our Klean King</h4>
 			<h1>Exclusive Services</h1>
 			<div class='services'>
 				{services.map((service, index) => {
