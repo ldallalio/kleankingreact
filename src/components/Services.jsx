@@ -3,6 +3,8 @@ import AirDucts from '../assets/images/airducts.png';
 import CarpetCleaning from '../assets/images/carpetcleaning.png';
 import Hardwood from '../assets/images/hardwood.png';
 import WaterDamage from '../assets/images/waterdamage.png';
+import Crime from '../assets/images/crimescene.png';
+import Dryer from '../assets/images/dryer.png';
 
 function Services() {
 	let services = [
@@ -22,8 +24,7 @@ function Services() {
 			title: 'Dryer Ducts',
 			description:
 				'We build websites that are responsive, user-friendly, and easy to use.',
-			image:
-				'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+			image: Dryer,
 		},
 		{
 			title: 'Hardwood Flooring',
@@ -41,13 +42,12 @@ function Services() {
 			title: 'Crime Scene Cleaning',
 			description:
 				'We build websites that are responsive, user-friendly, and easy to use.',
-			image:
-				'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+			image: Crime,
 		},
 	];
 	return (
 		<div class='servicesContainer'>
-			<h4>Our Klean King</h4>
+			<h4>KLEAN KING</h4>
 			<h1>Exclusive Services</h1>
 			<div class='services'>
 				{services.map((service, index) => {
@@ -68,7 +68,7 @@ function Services() {
 							</svg>
 
 							<h3>{service.title}</h3>
-							<p>{service.description}</p>
+							{/* <p>{service.description}</p> */}
 						</div>
 					);
 				})}

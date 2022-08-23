@@ -418,9 +418,9 @@ li.active a {
 }
 
 .servicesContainer h4 {
-	font-weight: 400;
+	font-weight: 700;
 	color: rgb(209, 29, 35);
-	font-size: 1.4em;
+	font-size: 1.5em;
 	text-align: center;
 	margin-bottom: 0;
 }
@@ -432,6 +432,7 @@ li.active a {
 	text-align: center;
 	margin-bottom: 0;
 	margin-top: 10px;
+	padding-bottom: 1em;
 }
 
 .service p {
@@ -453,7 +454,6 @@ li.active a {
 	padding: 2em;
 	background-color: rgb(255, 255, 255);
 	display: flex;
-	flex-flow: column;
 	flex-flow: row;
 	width: 90%;
 	padding: 1em;
@@ -471,4 +471,49 @@ li.active a {
 .about {
 	width: 70%;
 	padding: 3em;
+}
+
+.about h4 {
+	font-weight: 500;
+	color: red;
+}
+
+.about h2 {
+	font-size: 2em;
+	font-weight: 900;
+	color: rgb(194, 15, 15);
+}
+
+.about p {
+	line-height: 26px;
+	font-weight: 300;
+	letter-spacing: 3px;
+	color: rgba(22, 70, 135, 1);
+}
+
+@media screen and (max-width: 1100px) {
+	.aboutContainer {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+/* ********************************************************************** */
+/* ********************************************************************** */
+/* *******************      Portfolio Section        ******************** */
+/* ********************************************************************** */
+/* ********************************************************************** */
+
+.workContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.workContainer h2 {
+	font-size: 2em;
+	font-weight: 900;
+	color: rgb(194, 15, 15);
 }
