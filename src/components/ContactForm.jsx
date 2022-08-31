@@ -7,26 +7,31 @@ function ContactForm() {
 	}
 	return (
 		<form className='form' onSubmit={handleSubmit}>
-			<input id='name' type='name' name='name' placeholder='NAME' />
+			<input id='name' type='name' name='name' placeholder='NAME*' />
 			<ValidationError prefix='Name' field='name' errors={state.errors} />
-
-			<input id='email' type='email' name='email' placeholder='EMAIL' />
+			<input id='email' type='email' name='email' placeholder='EMAIL*' />
 			<ValidationError prefix='Email' field='email' errors={state.errors} />
-
-			<input id='phone' type='phone' name='phone' placeholder='PHONE' />
+			<input id='phone' type='phone' name='phone' placeholder='PHONE*' />
 			<ValidationError prefix='Phone' field='phone' errors={state.errors} />
-
 			<input
 				id='service'
 				type='service'
 				name='service'
-				placeholder='CHOOSE SERVICE'
+				placeholder='CHOOSE SERVICE*'
+				list='services'
 			/>
-			<ValidationError prefix='Service' field='service' errors={state.errors} />
+			<datalist id='services'>
+				<option value='Fire & Water Damage'></option>
+				<option value='Air Ducts'></option>
+				<option value='Dryer Vents'></option>
+				<option value='Hardwood'></option>
+				<option value='Carpet & Rugs'></option>
+				<option value='Crime Scene Cleaning'></option>
+			</datalist>
 
+			<ValidationError prefix='Service' field='service' errors={state.errors} />
 			<input id='zipcode' type='zipcode' name='zipcode' placeholder='ZIPCODE' />
 			<ValidationError prefix='Zipcode' field='zipcode' errors={state.errors} />
-
 			<textarea
 				id='message'
 				name='message'

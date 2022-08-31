@@ -310,10 +310,9 @@ li.active a {
 	margin-left: -150px;
 }
 
-.getQuote a:hover {
+.getQuote:hover {
 	background-color: white;
-	color: rgb(22, 70, 135);
-	border: 2px solid red;
+	color: black;
 }
 
 @media screen and (max-width: 650px) {
@@ -347,6 +346,9 @@ li.active a {
 		font-size: 3.5rem;
 		color: white;
 		text-shadow: rgba(0, 0, 0, 0.254) 0.1em 0.1em 0.2em;
+	}
+	#getQuote a:hover {
+		color: black;
 	}
 }
 
@@ -618,7 +620,10 @@ li.active a {
 }
 
 .formContainer {
+	justify-content: center;
+	align-items: center;
 	display: flex;
+	flex-direction: column;
 	width: 50%;
 }
 .form {
@@ -666,6 +671,13 @@ textarea {
 	border: 2px solid red;
 }
 
+.formContainer h2 {
+	font-size: 2em;
+	font-weight: 900;
+	color: rgb(194, 15, 15);
+	text-align: center;
+}
+
 @media screen and (max-width: 800px) {
 	.contact {
 		display: flex;
@@ -685,5 +697,66 @@ textarea {
 	}
 	.form button {
 		margin-left: -75.5%;
+	}
+}
+
+/* ********************************************************************** */
+/* ********************************************************************** */
+/* ********************      Estimate Banner        ********************* */
+/* ********************************************************************** */
+/* ********************************************************************** */
+
+.estimateContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background-color: rgb(194, 15, 15);
+	min-height: 300px;
+	color: white;
+	padding: 0 6em 0 6em;
+}
+
+.estimateContainer h2 {
+	padding: 0px;
+	font-size: 32px;
+	max-width: 500px;
+	min-width: 375px;
+}
+.estimateContainer button {
+	padding: 0.8em;
+	background-color: white;
+	color: rgb(209, 29, 35);
+	font-weight: bold;
+	border-radius: 3px;
+	border: none;
+	font-size: 1em;
+	min-width: 150px;
+}
+
+.estimateContainer a {
+	color: red;
+}
+.estimateContainer button:hover {
+	background-color: white;
+	color: rgb(22, 70, 135);
+	border: 2px solid red;
+	transition: ease-in 0.8ms;
+}
+
+@media screen and (max-width: 850px) {
+	.estimateContainer {
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-flow: column wrap;
+		background-color: rgb(194, 15, 15);
+		min-height: 300px;
+		color: white;
+		padding: 20px;
+	}
+	.estimateContainer button {
+		margin-top: -50px;
 	}
 }

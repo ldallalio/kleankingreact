@@ -6,6 +6,7 @@ function Contact() {
 	return (
 		<div class='contact'>
 			<div className='formContainer'>
+				<h2>Feel Free To Ask Us Any Questions!</h2>
 				<Form />
 			</div>
 			<div className='contactImage'>

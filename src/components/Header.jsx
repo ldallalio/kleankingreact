@@ -59,7 +59,7 @@ function Header() {
 							<a href='#portfolio'>Our Work</a>
 						</li>
 						<li className='menuItem getQuote'>
-							<a href='#services'>Get Quote</a>
+							<a href='#getQuote'>Get Quote</a>
 						</li>
 					</ul>
 				</div>
