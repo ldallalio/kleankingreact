@@ -7,7 +7,7 @@ function HeroSection() {
 				<div className='heroText'>
 					<h1>When Calamity Strikes Klean King Has You Covered</h1>
 					<div className='getQuote'>
-						<a href='tel:2252879379'>Get a Quote</a>
+						<a href='tel:318-323-8722'>Get a Quote</a>
 					</div>
 				</div>
 			</div>

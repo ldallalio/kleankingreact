@@ -4,7 +4,7 @@ import Blue from '../assets/images/blue.png';
 
 function About() {
 	return (
-		<div class='aboutContainer'>
+		<div class='aboutContainer' id='about'>
 			<div className='aboutImage'></div>
 			<div className='about'>
 				<h2>About Klean King</h2>

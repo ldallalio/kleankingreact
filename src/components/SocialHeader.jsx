@@ -41,7 +41,7 @@ function SocialHeader() {
 				<a href='mailto:kleankingcarpet@att.net'>kleankingcarpet@att.net</a>
 			</div>
 			<div className='socialPhoneIcon'>
-				<a href='tel:2252879379'>
+				<a href='tel:318-323-8722'>
 					<svg
 						width='15'
 						height='15'

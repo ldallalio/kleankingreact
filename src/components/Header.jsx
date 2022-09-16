@@ -27,16 +27,16 @@ function Header() {
 						<a href='/'>Home</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#about'>About</a>
+						<a href='/#about'>About</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#services'>Our Services</a>
+						<a href='/#services'>Our Services</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#portfolio'>Our Work</a>
+						<a href='/#portfolio'>Our Work</a>
 					</li>
 					<li className='menuItem'>
-						<a href='#contactus'>Contact</a>
+						<a href='/#contactus'>Contact</a>
 					</li>
 				</ul>
 			</div>
@@ -50,22 +50,22 @@ function Header() {
 							<a href='/'>Home</a>
 						</li>
 						<li className='menuItem'>
-							<a href='#about'>About</a>
+							<a href='/#about'>About</a>
 						</li>
 						<li className='menuItem'>
-							<a href='#services'>Our Services</a>
+							<a href='/#services'>Our Services</a>
 						</li>
 						<li className='menuItem'>
-							<a href='#portfolio'>Our Work</a>
+							<a href='/#portfolio'>Our Work</a>
 						</li>
 						<li className='menuItem getQuote'>
-							<a href='#getQuote'>Get Quote</a>
+							<a href='tel:318-323-8722'>Get Quote</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div className='getQuote'>
-				<a href='tel:2252879379'>Get a Quote</a>
+				<a href='tel:318-323-8722'>Get a Quote</a>
 			</div>
 		</div>
 	);

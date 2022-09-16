@@ -83,11 +83,21 @@ function Footer() {
 					{/* Col 1 Quick Links */}
 					<div className='quickLinksCol'>
 						<div className='footerLinksHeader'>Quick Links</div>
-						<a className='footerLink'>Home</a>
-						<a className='footerLink'>About</a>
-						<a className='footerLink'>Our Services</a>
-						<a className='footerLink'>Our Work</a>
-						<a className='footerLink'>Contact</a>
+						<a className='footerLink' href='/'>
+							Home
+						</a>
+						<a className='footerLink' href='/#about'>
+							About
+						</a>
+						<a className='footerLink' href='/#services'>
+							Our Services
+						</a>
+						<a className='footerLink' href='/#portfolio'>
+							Our Work
+						</a>
+						<a className='footerLink' href='/#contactus'>
+							Contact
+						</a>
 					</div>
 					{/* Col 2 Contact Information */}
 					<div className='contactInfoCol'>
@@ -111,7 +121,7 @@ function Footer() {
 									</clipPath>
 								</defs>
 							</svg>
-							<a href='#'>318-323-8722</a>
+							<a href='tel:318-323-8722'>318-323-8722</a>
 						</div>
 						<div className='footerLink'>
 							<svg
@@ -144,7 +154,9 @@ function Footer() {
 									</clipPath>
 								</defs>
 							</svg>
-							<a href='#'>kleankingcarpet@att.net</a>
+							<a href='mailto:kleankingcarpet@att.net'>
+								kleankingcarpet@att.net
+							</a>
 						</div>
 
 						<div className='footerLink'>
@@ -159,7 +171,7 @@ function Footer() {
 									fill='#C52026'
 								/>
 							</svg>
-							<a href='#'>2205 Justice St. Suite B Monroe, LA 71201</a>
+							<a href='#'>707 N 30th Justice St, Monroe LA, 71201</a>
 						</div>
 					</div>
 					{/* Col 3 Subscribe to our Newsletter */}

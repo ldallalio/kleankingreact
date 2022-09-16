@@ -3,10 +3,15 @@ import { useForm, ValidationError } from '@formspree/react';
 function ContactForm() {
 	const [state, handleSubmit] = useForm('xeqdoabd');
 	if (state.succeeded) {
-		return <div>Thank you for signing up!</div>;
+		return (
+			<div>
+				Thank you for contacting Klean King! We will be with you within 1
+				business day!
+			</div>
+		);
 	}
 	return (
-		<form className='form' onSubmit={handleSubmit}>
+		<form className='form' onSubmit={handleSubmit} id='contactus'>
 			<input id='name' type='name' name='name' placeholder='NAME*' />
 			<ValidationError prefix='Name' field='name' errors={state.errors} />
 			<input id='email' type='email' name='email' placeholder='EMAIL*' />
