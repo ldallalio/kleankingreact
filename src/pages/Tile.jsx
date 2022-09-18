@@ -28,7 +28,7 @@ function Tile() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>You Need Your Tile & Grout Cleaned!</h2>
+					<h2>Professional Tile & Grout Cleaning</h2>
 					<p>
 						Klean King can renew the shine to your tile and grout throughout
 						your home. Our professional technicians use specialized cleaning

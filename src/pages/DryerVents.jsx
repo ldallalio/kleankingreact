@@ -28,7 +28,7 @@ function DryerVents() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>You Need Your Dryer Vents Cleaned</h2>
+					<h2>Professional Dryer Vent Cleaning</h2>
 					<p>
 						<p> DRYER VENT CLEANING SERVICES</p>
 

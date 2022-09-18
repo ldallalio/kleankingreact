@@ -28,8 +28,8 @@ function WaterAndFire() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>We Are Here to Help!</h2>
-					<p> 24/7 Emergency Water Removal</p>
+					<h2>Klean King Emergency Services</h2>
+					<h3> 24/7 Emergency Water Removal</h3>
 
 					<p>
 						We are here to help with all of your water damage restoration needs.
@@ -101,7 +101,7 @@ function WaterAndFire() {
 						specialize in water extraction and expert cleaning and sanitation of
 						all flooring in your home or office building.
 					</p>
-					<p> Fire Restoration</p>
+					<h3> Fire Restoration</h3>
 
 					<p>
 						Klean King has highly qualified technicians to help eliminate

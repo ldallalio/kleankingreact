@@ -28,8 +28,8 @@ function Hardwood() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>You Need Your Hardwood Flooring Cleaned</h2>
-					<p> Hardwood Floor Refinishing</p>
+					<h2>Professional Hardwood Services</h2>
+					<h3> Hardwood Floor Refinishing</h3>
 
 					<p>
 						Do your hardwood floors appear rough, dirty, or scratched with a
@@ -83,7 +83,7 @@ function Hardwood() {
 						years.{' '}
 					</p>
 
-					<p>Hardwood Floor Wax Removal </p>
+					<h3>Hardwood Floor Wax Removal </h3>
 
 					<p>
 						Our Hardwood Floor Cleaner is a powerful, unique product that has

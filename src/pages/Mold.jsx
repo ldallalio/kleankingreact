@@ -28,7 +28,7 @@ function Mold() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>Klean King Removes Dangerous Mold!</h2>
+					<h2>Residental and Commercial Mold Removal</h2>
 					<p>
 						Mold Remediation Mold remediation encompasses identifying and
 						addressing mold issues in a structure. Mold remediation prevents the

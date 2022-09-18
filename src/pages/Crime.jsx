@@ -28,8 +28,8 @@ function Crime() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>Klean King Is Here To Help!</h2>
-					<p>
+					<h2>Under Construction</h2>
+					{/* <p>
 						When it comes to air duct cleaning, you could say, “If it’s in your
 						ducts, it’s in your lungs.” Even in homes where the air filter is
 						changed regularly, dust and particles can gather in the system and
@@ -45,7 +45,7 @@ function Crime() {
 						system. Furthermore, duct cleaning improves your indoor air quality
 						by removing dust, mold, allergens and bacteria from your HVAC
 						system.
-					</p>
+					</p> */}
 				</div>
 				<div className='servicePageSidebar'>
 					<h3>Our Services</h3>

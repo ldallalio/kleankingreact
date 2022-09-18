@@ -28,7 +28,7 @@ function Carpet() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
-					<h2>You Need Your Carpet Cleaned</h2>
+					<h2>Residental and Commercial Carpet & Rugs</h2>
 					<p>
 						No matter how clean you keep your home, carpets typically harbor
 						significant quantities of dust mites, pollen, and other
