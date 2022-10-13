@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import Header from '../components/Header';
-import SocialHeader from '../components/SocialHeader';
-import PageTitle from '../components/PageTitle';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import Banner from '../components/EstimateBanner';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import Header from "../components/Header";
+import SocialHeader from "../components/SocialHeader";
+import PageTitle from "../components/PageTitle";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+import Banner from "../components/EstimateBanner";
+import { useNavigate } from "react-router-dom";
 function Hardwood() {
 	const navigate = useNavigate();
-	const pageName = 'Hardwood';
+	const pageName = "Hardwood";
 
 	useEffect(() => {
 		setActive();
@@ -16,9 +16,9 @@ function Hardwood() {
 
 	const setActive = () => {
 		//Remove active from Home
-		document.querySelector('li').classList.remove('active');
+		document.querySelector("li").classList.remove("active");
 		//Add active to Services
-		document.getElementsByTagName('li')[2].classList.add('active');
+		document.getElementsByTagName("li")[2].classList.add("active");
 	};
 
 	return (
@@ -72,7 +72,7 @@ function Hardwood() {
 						time, becoming more vulnerable to scratches or spills. In addition
 						to being more vulnerable to scratches and spills, the wood loses its
 						luster. In many cases, it is too late if scratches have penetrated
-						the color.{' '}
+						the color.{" "}
 					</p>
 
 					<p>
@@ -80,7 +80,7 @@ function Hardwood() {
 						flooring traffic and whether or not you wear shoes may determine how
 						much traffic your floors get. You may, however, avoid a full sanding
 						indefinitely if you apply a screen and recoat at least once every 2
-						years.{' '}
+						years.{" "}
 					</p>
 
 					<h3>Hardwood Floor Wax Removal </h3>
@@ -93,7 +93,7 @@ function Hardwood() {
 						clean your floors, they&rsquo;ll be free of the dirt, grime, and
 						scuff marks and will look like new! If you&rsquo;ve been wanting to
 						refinish hardwood floors, you&rsquo;ve come to the right service
-						provider.{' '}
+						provider.{" "}
 					</p>
 
 					<p>
@@ -112,18 +112,19 @@ function Hardwood() {
 				<div className='servicePageSidebar'>
 					<h3>Our Services</h3>
 					<ul>
-						<li onClick={() => navigate('/airducts')}>Air Ducts</li>
-						<li onClick={() => navigate('/carpet')}>Carpet & Rugs</li>
-						<li onClick={() => navigate('/tile')}>Tile & Grout</li>
-						<li onClick={() => navigate('/hardwood')}>Hardwood Floors</li>
-						<li onClick={() => navigate('/dryervent')}>Dryer Vents</li>
-						<li onClick={() => navigate('/mold')}>Mold Removal</li>
-						<li onClick={() => navigate('/waterandfiredamage')}>
+						<li onClick={() => navigate("/airducts")}>Air Ducts</li>
+						<li onClick={() => navigate("/carpet")}>Carpet & Rugs</li>
+						<li onClick={() => navigate("/tile")}>Tile & Grout</li>
+						<li onClick={() => navigate("/hardwood")}>Hardwood Floors</li>
+						<li onClick={() => navigate("/dryervent")}>Dryer Vents</li>
+						<li onClick={() => navigate("/mold")}>Mold Removal</li>
+						<li onClick={() => navigate("/waterandfiredamage")}>
 							Water & Fire Damage
 						</li>
-						<li onClick={() => navigate('/crimescene')}>
+						<li onClick={() => navigate("/crimescene")}>
 							Crime Scene Cleaning
 						</li>
+						<li onClick={() => navigate("/upholstery")}>Upholstery</li>
 					</ul>
 				</div>
 			</div>

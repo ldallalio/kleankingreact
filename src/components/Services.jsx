@@ -7,6 +7,7 @@ import Crime from "../assets/images/crimescene.png";
 import Dryer from "../assets/images/dryer.png";
 import Mold from "../assets/images/Mold.png";
 import Tile from "../assets/images/Tile.png";
+import Upholstery from "../assets/images/upholstery.png";
 
 function Services() {
 	let services = [
@@ -66,13 +67,13 @@ function Services() {
 			image: Mold,
 			link: "/mold",
 		},
-		// {
-		// 	title: "Mold Removal",
-		// 	description:
-		// 		"We build websites that are responsive, user-friendly, and easy to use.",
-		// 	image: Mold,
-		// 	link: "/mold",
-		// },
+		{
+			title: "Upholstery",
+			description:
+				"We build websites that are responsive, user-friendly, and easy to use.",
+			image: Upholstery,
+			link: "/upholstery",
+		},
 	];
 	return (
 		<div class='servicesContainer' id='services'>

@@ -94,6 +94,7 @@ function Crime() {
 						<li onClick={() => navigate("/crimescene")}>
 							Crime Scene Cleaning
 						</li>
+						<li onClick={() => navigate("/upholstery")}>Upholstery</li>
 					</ul>
 				</div>
 			</div>

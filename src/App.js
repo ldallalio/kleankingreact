@@ -1,15 +1,16 @@
-import React from 'react';
-import './index.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Airducts from './pages/Airducts';
-import Mold from './pages/Mold';
-import Hardwood from './pages/Hardwood';
-import Crime from './pages/Crime';
-import Carpet from './pages/Carpet';
-import Dryer from './pages/DryerVents';
-import Water from './pages/WaterAndFire';
-import Tile from './pages/Tile';
+import React from "react";
+import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Airducts from "./pages/Airducts";
+import Mold from "./pages/Mold";
+import Hardwood from "./pages/Hardwood";
+import Crime from "./pages/Crime";
+import Carpet from "./pages/Carpet";
+import Dryer from "./pages/DryerVents";
+import Water from "./pages/WaterAndFire";
+import Tile from "./pages/Tile";
+import Upholstery from "./pages/Upholstery";
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 				<Route path='/dryervent' element={<Dryer />} />
 				<Route path='/waterandfiredamage' element={<Water />} />
 				<Route path='/tile' element={<Tile />} />
+				<Route path='/upholstery' element={<Upholstery />} />
 			</Routes>
 		</BrowserRouter>
 	);
