@@ -1,71 +1,78 @@
-import React from 'react';
-import AirDucts from '../assets/images/airducts.png';
-import CarpetCleaning from '../assets/images/carpetcleaning.png';
-import Hardwood from '../assets/images/hardwood.png';
-import WaterDamage from '../assets/images/waterdamage.png';
-import Crime from '../assets/images/crimescene.png';
-import Dryer from '../assets/images/dryer.png';
-import Mold from '../assets/images/Mold.png';
-import Tile from '../assets/images/Tile.png';
+import React from "react";
+import AirDucts from "../assets/images/airducts.png";
+import CarpetCleaning from "../assets/images/carpetcleaning.png";
+import Hardwood from "../assets/images/hardwood.png";
+import WaterDamage from "../assets/images/waterdamage.png";
+import Crime from "../assets/images/crimescene.png";
+import Dryer from "../assets/images/dryer.png";
+import Mold from "../assets/images/Mold.png";
+import Tile from "../assets/images/Tile.png";
 
 function Services() {
 	let services = [
 		{
-			title: 'Air Ducts',
+			title: "Air Ducts",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: AirDucts,
-			link: '/airducts',
+			link: "/airducts",
 		},
 		{
-			title: 'Carpet & Rugs',
+			title: "Carpet & Rugs",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: CarpetCleaning,
-			link: '/carpet',
+			link: "/carpet",
 		},
 		{
-			title: 'Dryer Vents',
+			title: "Dryer Vents",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: Dryer,
-			link: '/dryervent',
+			link: "/dryervent",
 		},
 		{
-			title: 'Hardwood Flooring',
+			title: "Hardwood Flooring",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: Hardwood,
-			link: '/hardwood',
+			link: "/hardwood",
 		},
 		{
-			title: 'Fire & Water Damage',
+			title: "Fire & Water Damage",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: WaterDamage,
-			link: '/waterandfiredamage',
+			link: "/waterandfiredamage",
 		},
 		{
-			title: 'Crime Scene Cleaning',
+			title: "Crime Scene Cleaning",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: Crime,
-			link: '/crimescene',
+			link: "/crimescene",
 		},
 		{
-			title: 'Tile & Grout',
+			title: "Tile & Grout",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: Tile,
-			link: '/tile',
+			link: "/tile",
 		},
 		{
-			title: 'Mold Removal',
+			title: "Mold Removal",
 			description:
-				'We build websites that are responsive, user-friendly, and easy to use.',
+				"We build websites that are responsive, user-friendly, and easy to use.",
 			image: Mold,
-			link: '/mold',
+			link: "/mold",
 		},
+		// {
+		// 	title: "Mold Removal",
+		// 	description:
+		// 		"We build websites that are responsive, user-friendly, and easy to use.",
+		// 	image: Mold,
+		// 	link: "/mold",
+		// },
 	];
 	return (
 		<div class='servicesContainer' id='services'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Footer() {
 	return (
@@ -171,7 +171,7 @@ function Footer() {
 									fill='#C52026'
 								/>
 							</svg>
-							<a href='#'>707 N 30th Justice St, Monroe LA, 71201</a>
+							<a href='#'>707 N 30th St, Monroe LA, 71201</a>
 						</div>
 					</div>
 					{/* Col 3 Subscribe to our Newsletter */}
