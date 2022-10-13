@@ -1,11 +1,11 @@
-import React from 'react';
-import Reasons from '../assets/images/reasons.png';
-import People from '../assets/images/people.png';
+import React from "react";
+import Reasons from "../assets/images/reasons.png";
+import People from "../assets/images/people.png";
 
 function ChooseUs() {
 	return (
 		<div class='chooseUs'>
-			<h2>Experience the Untimate level of cleaning power</h2>
+			<h2>Experience the Ultimate Level of Cleaning Power</h2>
 			<div className='content'>
 				<div className='left'>
 					<img src={Reasons} alt='chooseUs' srcset='' />

@@ -38,8 +38,8 @@ function Crime() {
 
 					<p>
 						{" "}
-						YOU DON&rsquo;T KNOW HOW TO CLEAN THIS UP. DON&rsquo;T WORRY.
-						AFTERMATH DOES. Some situations fall far outside normal, everyday
+						YOU DON&rsquo;T KNOW HOW TO CLEAN THIS UP. DON&rsquo;T WORRY. Klean
+						King DOES. Some situations fall far outside normal, everyday
 						experience. If you&rsquo;re facing a cleanup you can&rsquo;t handle
 						on your own, you&rsquo;re probably right in the middle of one of
 						them. Hoarding, industrial accidents, kitchens infected with
@@ -69,14 +69,14 @@ function Crime() {
 						such as MRSA and hepatitis. Protecting you from these threats is our
 						responsibility. We don&rsquo;t stop until a scene is safe, even if
 						that means the removal of sections of carpet, flooring, or other
-						materials. That&rsquo;s remediation. Aftermath takes our
+						materials. That&rsquo;s remediation. Klean King takes our
 						responsibility to sanitize, disinfect and remediate your home,
 						business or vehicle very seriously, and we communicate how and why
 						we&rsquo;re doing so throughout the whole process. That&rsquo;s why
 						we&rsquo;re the nation&rsquo;s premier crime scene cleanup and
-						biohazard remediation company. Call us at 877-688-3794 for 24/7
-						emergency service. When you ask yourself, &ldquo;What now?&rdquo;
-						&mdash; trust Aftermath to answer the question.
+						biohazard remediation company. Call us for 24/7 emergency service.
+						When you ask yourself, &ldquo;What now?&rdquo; &mdash; trust Klean
+						King to answer the question.
 					</p>
 				</div>
 				<div className='servicePageSidebar'>
