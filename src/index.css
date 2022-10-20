@@ -481,7 +481,8 @@ li.active a {
 }
 
 .aboutImage {
-	background-image: url("./assets/images/truckwithbox.png");
+	/* background-image: url("./assets/images/truckwithbox.png"); */
+	background-image: url('./assets/images/Screen\ Shot\ 2022-10-20\ at\ 3.14.43\ PM.png');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
