@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function Tile() {
 	const navigate = useNavigate();
-	const pageName = "Tile & Grout";
+	const pageName = "tile";
 
 	useEffect(() => {
 		setActive();

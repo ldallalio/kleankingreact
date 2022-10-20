@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function DryerVents() {
 	const navigate = useNavigate();
-	const pageName = "Dryer Vents";
+	const pageName = "dryer";
 
 	useEffect(() => {
 		setActive();

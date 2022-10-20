@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function Upholstery() {
 	const navigate = useNavigate();
-	const pageName = "Upholstery";
+	const pageName = "upholstery";
 
 	useEffect(() => {
 		setActive();

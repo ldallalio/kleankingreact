@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function Mold() {
 	const navigate = useNavigate();
-	const pageName = "Mold Removal";
+	const pageName = "mold";
 
 	useEffect(() => {
 		setActive();

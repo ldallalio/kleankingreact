@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function Carpet() {
 	const navigate = useNavigate();
-	const pageName = "Carpet Cleaning";
+	const pageName = "carpet";
 
 	useEffect(() => {
 		setActive();

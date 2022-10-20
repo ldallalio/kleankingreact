@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function WaterAndFire() {
 	const navigate = useNavigate();
-	const pageName = "Water & Fire Damage";
+	const pageName = "water";
 
 	useEffect(() => {
 		setActive();

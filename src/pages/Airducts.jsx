@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function Airducts() {
 	const navigate = useNavigate();
-	const pageName = "Air Ducts";
+	const pageName = "air";
 
 	useEffect(() => {
 		setActive();

@@ -8,7 +8,7 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 function Crime() {
 	const navigate = useNavigate();
-	const pageName = "Crime Scene Cleaning";
+	const pageName = "crime";
 
 	useEffect(() => {
 		setActive();
