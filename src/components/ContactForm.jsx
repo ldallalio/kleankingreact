@@ -35,8 +35,6 @@ function ContactForm() {
 			</datalist>
 
 			<ValidationError prefix='Service' field='service' errors={state.errors} />
-			<input id='zipcode' type='zipcode' name='zipcode' placeholder='ZIPCODE' />
-			<ValidationError prefix='Zipcode' field='zipcode' errors={state.errors} />
 			<textarea
 				id='message'
 				name='message'
