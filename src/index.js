@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import ReactGA from 'react-ga4';
 import App from './App';
+import {HelmetProvider} from 'react-helmet-async'
 
 ReactGA.initialize(process.env.REACT_APP_GA_ID);
 if (process.env.REACT_APP_GA_ID != undefined) {
@@ -11,7 +12,9 @@ if (process.env.REACT_APP_GA_ID != undefined) {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <HelmetProvider>
     <App />
+    </HelmetProvider>
   </React.StrictMode>,
 );
 

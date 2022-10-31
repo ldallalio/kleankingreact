@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
+import {Helmet} from 'react-helmet-async'
 function WaterAndFire() {
 	const navigate = useNavigate();
 	const pageName = "water";
@@ -23,6 +24,9 @@ function WaterAndFire() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Water and Fire Restoration</title>
+			</Helmet>
 			<SocialHeader />
 			<Header />
 			<PageTitle pageName={pageName} />

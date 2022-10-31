@@ -9,10 +9,14 @@ import Choose from '../components/ChooseUs';
 import Contact from '../components/Contact';
 import Estimate from '../components/EstimateBanner';
 import Footer from '../components/Footer';
+import {Helmet} from 'react-helmet-async'
 
 function Home() {
   return (
     <>
+      <Helmet>
+				<title>Klean King - Home</title>
+			</Helmet>
       <SocialHeader />
       <Header />
       <Hero />

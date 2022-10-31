@@ -22,7 +22,7 @@ function ContactForm() {
 				id='service'
 				type='service'
 				name='service'
-				placeholder='CHOOSE SERVICE*'
+				placeholder='SERVICE REQUESTED'
 				list='services'
 			/>
 			<datalist id='services'>

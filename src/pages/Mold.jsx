@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
+import {Helmet} from 'react-helmet-async'
 function Mold() {
 	const navigate = useNavigate();
 	const pageName = "mold";
@@ -23,6 +24,9 @@ function Mold() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Mold Remediation</title>
+			</Helmet>
 			<SocialHeader />
 			<Header />
 			<PageTitle pageName={pageName} />

@@ -6,6 +6,7 @@ import PageTitle from '../components/PageTitle';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Banner from '../components/EstimateBanner';
+import {Helmet} from 'react-helmet-async'
 
 function Hardwood() {
   const navigate = useNavigate();
@@ -23,6 +24,9 @@ function Hardwood() {
 
   return (
     <>
+      <Helmet>
+				<title>Hardwood Floor Cleaning</title>
+			</Helmet>
       <SocialHeader />
       <Header />
       <PageTitle pageName={pageName} />
