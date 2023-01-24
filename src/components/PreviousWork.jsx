@@ -41,7 +41,7 @@ function PreviousWork() {
 	return (
 		<div className='workContainer' id='portfolio'>
 			<h2>Our Previous Work</h2>
-			<ImageGallery items={images} showPlayButton={false} />
+			<ImageGallery loading="lazy"  items={images} showPlayButton={false} />
 		</div>
 	);
 }

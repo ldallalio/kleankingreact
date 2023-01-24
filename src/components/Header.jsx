@@ -20,7 +20,7 @@ function Header() {
   return (
     <div className="headerContainer">
       <div className="logo">
-        <img src={Logo} alt="Klean King Logo" />
+        <img loading='lazy' src={Logo} alt="Klean King Logo" />
       </div>
       <div className="navMenu">
         <ul>

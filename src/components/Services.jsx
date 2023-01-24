@@ -84,7 +84,7 @@ function Services() {
         {services.map((service, index) => (
           <a href={service.link}>
             <div className="service" key={index}>
-              <img src={service.image} alt={service.title} />
+              <img loading="lazy"  src={service.image} alt={service.title} />
               <svg
                 width="72"
                 height="72"

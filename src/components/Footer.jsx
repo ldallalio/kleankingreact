@@ -184,7 +184,7 @@ function Footer() {
 			</div>
 			{/* Section 3 */}
 			<div className='copyright'>
-				@2022 <a href='#'>Klean King</a> all rights reservered.
+				@2023 <a href='#'>Klean King</a> all rights reservered.
 			</div>
 		</div>
 	);

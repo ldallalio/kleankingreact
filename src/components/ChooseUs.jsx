@@ -8,10 +8,10 @@ function ChooseUs() {
 			<h2>Experience the Ultimate Level of Cleaning Power</h2>
 			<div className='content'>
 				<div className='left'>
-					<img src={Reasons} alt='chooseUs' srcset='' />
+					<img loading="lazy" src={Reasons} alt='chooseUs' srcset='' />
 				</div>
 				<div className='right'>
-					<img src={People} alt='chooseUs' srcset='' />
+					<img loading="lazy" src={People} alt='chooseUs' srcset='' />
 				</div>
 			</div>
 		</div>

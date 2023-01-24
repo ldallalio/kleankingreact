@@ -10,7 +10,7 @@ function Contact() {
         <Form />
       </div>
       <div className="contactImage">
-        <img src={Image} alt="Contact" />
+        <img loading="lazy"  src={Image} alt="Contact" />
       </div>
     </div>
   );
