@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './ContactForm';
-import Image from '../assets/images/contactImage.jpg';
+import Image from '../assets/images/contactImage.webp';
 
 function Contact() {
   return (
