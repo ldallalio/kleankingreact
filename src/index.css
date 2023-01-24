@@ -267,7 +267,7 @@ li.active a {
 
 .heroContainer {
 	height: calc(100vh - 138px);
-	background-image: url(./assets/images/heroImage.jpg);
+	background-image: url(./assets/images/heroImage.webp);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -322,7 +322,7 @@ li.active a {
 
 @media screen and (max-width: 650px) {
 	.heroContainer {
-		background-image: url("./assets/images/heroImageMobile.png");
+		background-image: url("./assets/images/heroImageMobile.webp");
 		background-size: cover;
 		background-position: top;
 	}
@@ -481,8 +481,8 @@ li.active a {
 }
 
 .aboutImage {
-	/* background-image: url("./assets/images/truckwithbox.png"); */
-	background-image: url('./assets/images/kleankingvan.png');
+	/* background-image: url("./assets/images/truckwithbox.webp"); */
+	background-image: url('./assets/images/kleankingvan.webp');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -809,7 +809,7 @@ textarea {
 }
 
 .footerLogo {
-	background-image: url("./assets/logo/KleanKingLogo.png");
+	background-image: url("./assets/logo/KleanKingLogo.webp");
 	background-size: contain;
 	width: 100px;
 	height: 50px;
@@ -913,39 +913,39 @@ textarea {
 /* ********************************************************************** */
 /* ********************************************************************** */
 .carpet {
-	background-image: url("./assets/images/titleimages/carpet.png");
+	background-image: url("./assets/images/titleimages/carpet.webp");
 }
 
 .tile {
-	background-image: url("./assets/images/titleimages/tile.png");
+	background-image: url("./assets/images/titleimages/tile.webp");
 }
 
 .air {
-	background-image: url("./assets/images/titleimages/air.png");
+	background-image: url("./assets/images/titleimages/air.webp");
 }
 
 .dryer {
-	background-image: url("./assets/images/titleimages/dryer.png");
+	background-image: url("./assets/images/titleimages/dryer.webp");
 }
 
 .crime {
-	background-image: url("./assets/images/titleimages/crime.png");
+	background-image: url("./assets/images/titleimages/crime.webp");
 }
 
 .mold {
-	background-image: url("./assets/images/titleimages/mold.png");
+	background-image: url("./assets/images/titleimages/mold.webp");
 }
 
 .upholstery {
-	background-image: url("./assets/images/titleimages/upholstery.png");
+	background-image: url("./assets/images/titleimages/upholstery.webp");
 }
 
 .hardwood {
-	background-image: url("./assets/images/titleimages/hardwood.png");
+	background-image: url("./assets/images/titleimages/hardwood.webp");
 }
 
 .water {
-	background-image: url("./assets/images/titleimages/water.png");
+	background-image: url("./assets/images/titleimages/water.webp");
 }
 
 

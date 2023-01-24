@@ -1,13 +1,13 @@
 import React from 'react';
-import AirDucts from '../assets/images/airducts.png';
-import CarpetCleaning from '../assets/images/carpetcleaning.png';
-import Hardwood from '../assets/images/hardwood.png';
-import WaterDamage from '../assets/images/waterdamage.png';
-import Crime from '../assets/images/crimescene.png';
-import Dryer from '../assets/images/dryer.png';
-import Mold from '../assets/images/Mold.png';
-import Tile from '../assets/images/Tile.png';
-import Upholstery from '../assets/images/upholstery.png';
+import AirDucts from '../assets/images/airducts.webp';
+import CarpetCleaning from '../assets/images/carpetcleaning.webp';
+import Hardwood from '../assets/images/hardwood.webp';
+import WaterDamage from '../assets/images/waterdamage.webp';
+import Crime from '../assets/images/crimescene.webp';
+import Dryer from '../assets/images/dryer.webp';
+import Mold from '../assets/images/Mold.webp';
+import Tile from '../assets/images/Tile.webp';
+import Upholstery from '../assets/images/upholstery.webp';
 
 function Services() {
   const services = [

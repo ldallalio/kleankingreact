@@ -1,6 +1,6 @@
 import React from "react";
-import Reasons from "../assets/images/reasons.png";
-import People from "../assets/images/people.png";
+import Reasons from "../assets/images/reasons.webp";
+import People from "../assets/images/people.webp";
 
 function ChooseUs() {
 	return (

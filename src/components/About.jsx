@@ -1,6 +1,6 @@
 import React from 'react';
-import Truck from '../assets/images/truck.png';
-import Blue from '../assets/images/blue.png';
+import Truck from '../assets/images/truck.webp';
+import Blue from '../assets/images/blue.webp';
 
 function About() {
 	return (

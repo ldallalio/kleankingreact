@@ -16,6 +16,7 @@ function Home() {
     <>
       <Helmet>
 				<title>Klean King - Home</title>
+      
 			</Helmet>
       <SocialHeader />
       <Header />

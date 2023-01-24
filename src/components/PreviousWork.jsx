@@ -3,11 +3,11 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
-import Image1 from '../assets/images/prevworkimages/1.png';
-import Image2 from '../assets/images/prevworkimages/2.png';
-import Image3 from '../assets/images/prevworkimages/3.png';
-import Image4 from '../assets/images/prevworkimages/4.png';
-import Image5 from '../assets/images/prevworkimages/5.png';
+import Image1 from '../assets/images/prevworkimages/1.webp';
+import Image2 from '../assets/images/prevworkimages/2.webp';
+import Image3 from '../assets/images/prevworkimages/3.webp';
+import Image4 from '../assets/images/prevworkimages/4.webp';
+import Image5 from '../assets/images/prevworkimages/5.webp';
 
 function PreviousWork() {
 	let width = '600px';

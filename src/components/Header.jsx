@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/logo/KleanKingLogo.png';
+import Logo from '../assets/logo/KleanKingLogo.webp';
 
 function Header() {
   const showMenu = () => {
