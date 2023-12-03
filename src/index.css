@@ -1026,3 +1026,8 @@ textarea {
 	padding-top: 10px;
 	font-weight: 600;
 }
+
+.servicePageSidebar li:hover {
+	transform: scale(1.2) !important;
+	cursor: pointer;
+}
