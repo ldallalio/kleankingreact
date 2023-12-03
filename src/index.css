@@ -407,6 +407,7 @@ li.active a {
 	min-width: 250px;
 	width: 250px;
 	margin-top: 0;
+	border-radius: 1rem;
 }
 
 .service p {

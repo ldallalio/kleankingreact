@@ -11,6 +11,7 @@ import Dryer from "./pages/DryerVents";
 import Water from "./pages/WaterAndFire";
 import Tile from "./pages/Tile";
 import Upholstery from "./pages/Upholstery";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
 	return (
@@ -26,6 +27,7 @@ function App() {
 				<Route path='/waterandfiredamage' element={<Water />} />
 				<Route path='/tile' element={<Tile />} />
 				<Route path='/upholstery' element={<Upholstery />} />
+				<Route path='/landing' element={<LandingPage />} /> 
 			</Routes>
 		</BrowserRouter>
 	);
