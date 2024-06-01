@@ -22,6 +22,10 @@ code {
 	}
 }
 
+button:hover {
+	cursor: pointer;
+}
+
 /* ********************************************************************** */
 /* ********************************************************************** */
 /* *********************      Social Header        ********************** */
@@ -77,7 +81,6 @@ code {
 }
 
 @media screen and (max-width: 600px) {
-
 	/* .socialIcons{
     display:none;
   } */
@@ -278,9 +281,11 @@ li.active a {
 
 .heroContent {
 	background: rgb(255, 255, 255);
-	background: linear-gradient(90deg,
-			rgba(255, 255, 255, 1) 0%,
-			rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
 	width: 70%;
 }
 
@@ -330,9 +335,11 @@ li.active a {
 	.heroContent {
 		width: 100%;
 		background: rgb(0, 0, 0);
-		background: linear-gradient(90deg,
-				rgba(0, 0, 0, 0.393) 0%,
-				rgba(255, 255, 255, 0) 100%);
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 0.393) 0%,
+			rgba(255, 255, 255, 0) 100%
+		);
 	}
 
 	.heroText {
@@ -365,9 +372,11 @@ li.active a {
 .servicesContainer {
 	padding: 2em;
 	background-color: rgb(255, 255, 255);
-	background-color: linear-gradient(90deg,
-			rgba(255, 255, 255, 1) 0%,
-			rgba(255, 255, 255, 0) 100%);
+	background-color: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
 
 	display: flex;
 	flex-flow: column;
@@ -407,6 +416,7 @@ li.active a {
 	min-width: 250px;
 	width: 250px;
 	margin-top: 0;
+	border-radius: 1rem;
 }
 
 .service p {
@@ -482,7 +492,7 @@ li.active a {
 
 .aboutImage {
 	/* background-image: url("./assets/images/truckwithbox.webp"); */
-	background-image: url('./assets/images/kleankingvan.webp');
+	background-image: url("./assets/images/kleankingvan.webp");
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -868,7 +878,7 @@ textarea {
 	margin-right: 1em;
 }
 
-.footerLinks>* {
+.footerLinks > * {
 	margin-right: 4.2em;
 	display: flex;
 }
@@ -947,7 +957,6 @@ textarea {
 .water {
 	background-image: url("./assets/images/titleimages/water.webp");
 }
-
 
 .pageTitle {
 	display: flex;
@@ -1030,4 +1039,47 @@ textarea {
 .servicePageSidebar li:hover {
 	transform: scale(1.2) !important;
 	cursor: pointer;
+}
+
+/* ********************************************************************** */
+/* ********************************************************************** */
+/* *********************       Landing Page       *********************** */
+/* ********************************************************************** */
+/* ********************************************************************** */
+
+.landingPage {
+	display: flex;
+	flex-flow: column ;
+	width: 100vw;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 4em;
+}
+
+.landingPage h2 {
+	font-size: 2em;
+	font-weight: 900;
+	color: rgb(194, 15, 15);
+}
+
+.landingPage .hero-section {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: red;
+	min-height: 450px;
+	
+}
+
+.landingPage .footer-section {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: red;
+	min-width: 100vw;
+	position: relative;
+	bottom: 0;
 }
