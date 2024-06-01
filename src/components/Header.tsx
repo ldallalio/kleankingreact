@@ -1,24 +1,34 @@
-import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Logo from '../assets/logo/KleanKingLogo.webp';
+import { pageTypes } from '../common/interfaces';
+import { useContext } from 'react';
+import { GlobalStateContext } from '../App';
 
 function Header() {
+  const global = useContext(GlobalStateContext);
   const showMenu = () => {
     const menu = document.getElementById('mobileMenuContent');
     const hero = document.getElementsByClassName('heroContainer');
-    if (menu.style.display === 'none') {
-      menu.style.display = 'flex';
-      menu.style.opacity = '1';
-      menu.style.transition = '3s ease-in-out';
-      hero[0].style.position = 'fixed';
+    if(!menu || !hero) return;
+    if ((menu as HTMLElement).style.display === 'none') {
+      (menu as HTMLElement).style.display = 'flex';
+      (menu as HTMLElement).style.opacity = '1';
+      (menu as HTMLElement).style.transition = '3s ease-in-out';
+      (hero[0] as HTMLElement).style.position = 'fixed';
     } else {
-      menu.style.display = 'none';
-      menu.style.opacity = '0';
-      hero[0].style.position = 'static';
+      (menu as HTMLElement).style.display = 'none';
+      (menu as HTMLElement).style.opacity = '0';
+      (hero[0] as HTMLElement).style.position = 'static';
     }
   };
 
   return (
     <div className="headerContainer">
+      <Helmet>
+        {/* <title>Klean King - {pageTypes.AIR}</title> */}
+        <meta name="description" content="Welcome to Klean King - Your trusted cleaning service provider. We offer a wide range of cleaning services for residential and commercial properties. Contact us today for a free estimate!" />
+        <meta name="keywords" content="cleaning service, residential cleaning, commercial cleaning, professional cleaners" />
+      </Helmet>
       <div className="logo">
         <img loading='lazy' src={Logo} alt="Klean King Logo" />
       </div>

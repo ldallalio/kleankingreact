@@ -11,9 +11,13 @@ import Dryer from "./pages/DryerVents";
 import Water from "./pages/WaterAndFire";
 import Tile from "./pages/Tile";
 import Upholstery from "./pages/Upholstery";
+import LandingPage from "./pages/LandingPage";
+
+export const GlobalStateContext = React.createContext<any>(null);
 
 function App() {
 	return (
+		<GlobalStateContext.Provider value={{}}>
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Home />} />
@@ -26,8 +30,10 @@ function App() {
 				<Route path='/waterandfiredamage' element={<Water />} />
 				<Route path='/tile' element={<Tile />} />
 				<Route path='/upholstery' element={<Upholstery />} />
+				<Route path='/landing' element={<LandingPage />} /> 
 			</Routes>
 		</BrowserRouter>
+		</GlobalStateContext.Provider>
 	);
 }
 
