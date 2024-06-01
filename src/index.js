@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import ReactGA from 'react-ga4';
 import App from './App';
-import {HelmetProvider} from 'react-helmet-async'
+import {HelmetProvider, Helmet} from 'react-helmet-async'
 
 ReactGA.initialize(process.env.REACT_APP_GA_ID);
 if (process.env.REACT_APP_GA_ID != undefined) {
   console.log('GA4 Connected');
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 root.render(
   <React.StrictMode>
     <HelmetProvider>

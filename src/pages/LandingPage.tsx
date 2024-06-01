@@ -1,57 +1,140 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import SocialHeader from '../components/SocialHeader';
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import Header from "../components/Header";
+import SocialHeader from "../components/SocialHeader";
+import { pageTypes, serviceTitles } from "../common/interfaces";
+import { NewContactForm } from "../components/NewContactForm";
+import UpdatedTruckImg from '../assets/images/UpdatedKleanKingTruck.webp';
+import Footer from "../components/Footer";
+import { getGoogleReviews } from "../util/googleReviews";
 
 type Props = {};
 
 const LandingPage: React.FC<Props> = () => {
-    const setActive = () => {
-		//Remove active from Home
-        //@ts-ignore
-		document.querySelector("li").classList.remove("active");
-		//Add active to Services
-		document.getElementsByTagName("li")[2].classList.add("active");
+	const [pageType, setPageType] = useState<pageTypes>(pageTypes.AIR);
+	const [serviceTitle, setServiceTitle] = useState<serviceTitles>(serviceTitles.AIR);
+	const [landingImage, setLandingImage] = useState<string>(UpdatedTruckImg);
+	const [url , setUrl] = useState<any>();
+
+	const setActive = () => {
+		// Remove active from Home
+		document.querySelector("li")?.classList.remove("active");
+		// Add active to Services
+		document.getElementsByTagName("li")[2]?.classList.add("active");
 	};
-    useEffect(() => {
+
+	useEffect(() => {
 		setActive();
+		// Get title from URL and set the page type
+		const currentUrl = new URL(window.location.href);
+		setUrl(currentUrl)
+		const title = currentUrl.searchParams.get("title");
+
+		switch (title) {
+			case "carpet":
+				setPageType(pageTypes.CARPET);
+				setServiceTitle(serviceTitles.CARPET);
+				break;
+			case "tile":
+				setPageType(pageTypes.TILE);
+				setServiceTitle(serviceTitles.TILE);
+				break;
+			case "upholstery":
+				setPageType(pageTypes.UPHOLSTERY);
+				setServiceTitle(serviceTitles.UPHOLSTERY);
+				break;
+			case "wood":
+				setPageType(pageTypes.HARDWOOD);
+				setServiceTitle(serviceTitles.HARDWOOD);
+				break;
+			default:
+				setPageType(pageTypes.AIR);
+				setServiceTitle(serviceTitles.AIR);
+				break;
+		}
+
+		// getGoogleReviews().then(reviews => {
+		// 	console.log(reviews);
+		// }).catch(err => {
+		// 	console.error(err);
+		// });
 	}, []);
-    return (
-        <>
-        <Helmet>
-				<title>Book Now!</title>
+
+	return (
+		<>
+			<Helmet>
+				<title>Klean King - {serviceTitle}</title>
+				<meta name="description" content={`Klean King offers exceptional ${serviceTitle} services. Contact us for a free estimate and experience top-notch cleaning services.`} />
+				<meta name="keywords" content={`Klean King, ${serviceTitle} services, cleaning services`} />
+				<meta name="author" content="Klean King" />
 			</Helmet>
 			<SocialHeader />
 			<Header />
-        <div className="servicePageContent">
-            <section className="hero-section">
-                <h1>Welcome to My Landing Page</h1>
-                <p>Here is some introductory text.</p>
-            </section>
+			<div className="landingPage">
+				<section
+					className="hero-section"
+					style={{
+						backgroundImage: `url(${landingImage})`,
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+						backgroundRepeat: "no-repeat",
+					}}
+				>
+					<div
+						style={{
+							backgroundColor: "rgba(0, 0, 0, 0.5)",
+							padding: "20px",
+							textAlign: "center",
+							borderRadius: "10px",
+							width: "100%",
+						}}
+					>
 
-            <section className="features-section">
-                <h2>Features</h2>
-                <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                </ul>
-            </section>
+					<h1
+						style={{
+							color: "white",
+							fontSize: "2.5rem",
+							margin: 0,
+							padding: "20px",
+						}}
+					>
+						{serviceTitle} Services
 
-            <section className="cta-section">
-                <h2>Call to Action</h2>
-                <p>Place your call to action here.</p>
-                <button>Get Started</button>
-            </section>
+					</h1>
+					</div>
+				</section>
+				<div
+				style={{
+					backgroundColor: "white",
+					padding: "20px 0",
+					// textAlign: "center",
+					display: "flex",
+					justifyContent: "center",
+				}}
+			>
+			<NewContactForm />
 
-            <footer className="footer-section">
-                <p>&copy; 2022 My Landing Page. All rights reserved.</p>
-            </footer>
-        </div>
-        </>
-    );
+			</div>
+				<section
+					className="features-section"
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						gap: "20px",
+						padding: "20px",
+						borderRadius: "10px",
+						width: "100%",
+						textAlign: "center",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					{/* Additional content can be added here */}
+				</section>
+				<Footer />
+			</div>
+		</>
+	);
 };
 
 export default LandingPage;
-
-

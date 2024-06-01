@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Header from "../components/Header";
 import SocialHeader from "../components/SocialHeader";
 import PageTitle from "../components/PageTitle";
@@ -8,16 +8,21 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet }from 'react-helmet-async'
 import Sidebar from "../components/Sidebar";
+import { GlobalStateContext } from "../App";
 function Carpet() {
 	const navigate = useNavigate();
 	const pageName = "carpet";
-
+	const global = useContext(GlobalStateContext);
+	useEffect(()=>{
+		global.pageType = 'Carpet';
+	})
 	useEffect(() => {
 		setActive();
 	}, []);
 
 	const setActive = () => {
 		//Remove active from Home
+		//@ts-ignore
 		document.querySelector("li").classList.remove("active");
 		//Add active to Services
 		document.getElementsByTagName("li")[2].classList.add("active");
@@ -26,7 +31,15 @@ function Carpet() {
 	return (
 		<>
 			<Helmet>
-				<title>Carpet Cleaning and Rugs</title>
+				<title>Klean King - Carpet</title>
+				<meta
+					name='description'
+					content='No matter how clean you keep your home, carpets typically harbor significant quantities of dust mites, pollen, and other particulates, which build up over time, creating problems for allergy and asthma sufferers and non-sufferers alike.'
+				/>
+				<meta
+					name='keywords'
+					content='carpet cleaning, carpet repairs, mattress cleaning, area rug cleaning, pet treatments, carpet and fabric protectors, deodorization'
+				/>
 			</Helmet>
 			<SocialHeader />
 			<Header />
@@ -48,7 +61,7 @@ function Carpet() {
 						natural beauty.
 					</p>
 					<p>
-						<bold>Our Cleaning Services:</bold> Carpet Cleaning, Carpet Repairs,
+						<strong>Our Cleaning Services:</strong> Carpet Cleaning, Carpet Repairs,
 						Mattress Cleaning, Area Rug Cleaning Pet Treatments, Carpet and
 						Fabric Protectors, Deodorization.
 					</p>

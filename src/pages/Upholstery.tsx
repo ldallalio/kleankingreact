@@ -17,6 +17,7 @@ function Upholstery() {
 	}, []);
 
 	const setActive = () => {
+		//@ts-ignore
 		//Remove active from Home
 		document.querySelector("li").classList.remove("active");
 		//Add active to Services

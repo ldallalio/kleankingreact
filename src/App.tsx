@@ -13,8 +13,11 @@ import Tile from "./pages/Tile";
 import Upholstery from "./pages/Upholstery";
 import LandingPage from "./pages/LandingPage";
 
+export const GlobalStateContext = React.createContext<any>(null);
+
 function App() {
 	return (
+		<GlobalStateContext.Provider value={{}}>
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Home />} />
@@ -30,6 +33,7 @@ function App() {
 				<Route path='/landing' element={<LandingPage />} /> 
 			</Routes>
 		</BrowserRouter>
+		</GlobalStateContext.Provider>
 	);
 }
 
