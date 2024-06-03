@@ -47,6 +47,14 @@ const LandingPage: React.FC<Props> = () => {
 				setPageType(pageTypes.HARDWOOD);
 				setServiceTitle(serviceTitles.HARDWOOD);
 				break;
+			case "air":
+				setPageType(pageTypes.AIR);
+				setServiceTitle(serviceTitles.AIR);
+				break;
+			case "restoration":
+				setPageType(pageTypes.WATER);
+				setServiceTitle(serviceTitles.WATER);
+				break;
 			default:
 				setPageType(pageTypes.AIR);
 				setServiceTitle(serviceTitles.AIR);
