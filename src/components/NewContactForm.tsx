@@ -19,6 +19,10 @@ const services: IDropdownOption[] = [
 	{ key: serviceTitles.TILE, text: serviceTitles.TILE },
 	{ key: serviceTitles.UPHOLSTERY, text: serviceTitles.UPHOLSTERY },
 	{ key: serviceTitles.HARDWOOD, text: serviceTitles.HARDWOOD },
+	{ key: serviceTitles.WATER, text: serviceTitles.WATER },
+	{ key: serviceTitles.DRYER, text: serviceTitles.DRYER },
+	{ key: serviceTitles.MOLD, text: serviceTitles.MOLD },
+	{ key: serviceTitles.CRIME, text: serviceTitles.CRIME },
 ];
 
 interface IFormInput {
@@ -26,7 +30,7 @@ interface IFormInput {
 	email: string;
 	service: string;
 	message: string;
-    phone: string;
+	phone: string;
 }
 
 export const NewContactForm: React.FC<Props> = () => {
@@ -110,7 +114,8 @@ export const NewContactForm: React.FC<Props> = () => {
 				}}
 			>
 				Please fill out the form for a FREE ESTIMATE or to contact us for any
-                questions or concerns. We will get back to you within the next business day.
+				questions or concerns. We will get back to you within the next business
+				day.
 			</p>
 
 			<form
@@ -159,29 +164,28 @@ export const NewContactForm: React.FC<Props> = () => {
 						/>
 					)}
 				/>
-                {/* Add Phone Number */}
-                <Controller
-                    name="phone"
-                    control={control}
-                    rules={{
-                        required: "Phone is required",
-                        pattern: {
-                            value: /^[0-9]{10}$/,
-                            message: "Invalid phone number",
-                        },
-                    }}
-                    render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Phone"
-                            required
-                            errorMessage={
-                                errors.phone ? (errors.phone as FieldError).message : undefined
-                            }
-                        />
-                    )}
-                />
-
+				{/* Add Phone Number */}
+				<Controller
+					name="phone"
+					control={control}
+					rules={{
+						required: "Phone is required",
+						pattern: {
+							value: /^[0-9]{10}$/,
+							message: "Invalid phone number",
+						},
+					}}
+					render={({ field }) => (
+						<TextField
+							{...field}
+							label="Phone"
+							required
+							errorMessage={
+								errors.phone ? (errors.phone as FieldError).message : undefined
+							}
+						/>
+					)}
+				/>
 
 				<Controller
 					name="service"
