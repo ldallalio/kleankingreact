@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../components/Header";
 import SocialHeader from "../components/SocialHeader";
-import { pageTypes, serviceTitles } from "../common/interfaces";
+import { pageTypes, serviceDescriptions, serviceTitles } from "../common/interfaces";
 import { NewContactForm } from "../components/NewContactForm";
-import UpdatedTruckImg from '../assets/images/UpdatedKleanKingTruck.webp';
+import UpdatedTruckImg from '../assets/images/updatedTruckPhoto.png';
 import Footer from "../components/Footer";
 import { getGoogleReviews } from "../util/googleReviews";
 
@@ -13,6 +13,7 @@ type Props = {};
 const LandingPage: React.FC<Props> = () => {
 	const [pageType, setPageType] = useState<pageTypes>(pageTypes.AIR);
 	const [serviceTitle, setServiceTitle] = useState<serviceTitles>(serviceTitles.AIR);
+	const [serviceDescription, setServiceDescription] = useState<string>("");
 	const [landingImage, setLandingImage] = useState<string>(UpdatedTruckImg);
 	const [url , setUrl] = useState<any>();
 
@@ -34,30 +35,40 @@ const LandingPage: React.FC<Props> = () => {
 			case "carpet":
 				setPageType(pageTypes.CARPET);
 				setServiceTitle(serviceTitles.CARPET);
+				setServiceDescription(serviceDescriptions.clearning);
 				break;
 			case "tile":
 				setPageType(pageTypes.TILE);
 				setServiceTitle(serviceTitles.TILE);
+				setServiceDescription(serviceDescriptions.clearning);
+
 				break;
 			case "upholstery":
 				setPageType(pageTypes.UPHOLSTERY);
 				setServiceTitle(serviceTitles.UPHOLSTERY);
+				setServiceDescription(serviceDescriptions.clearning);
+
 				break;
 			case "wood":
 				setPageType(pageTypes.HARDWOOD);
 				setServiceTitle(serviceTitles.HARDWOOD);
+				setServiceDescription(serviceDescriptions.clearning);
+
 				break;
 			case "air":
 				setPageType(pageTypes.AIR);
 				setServiceTitle(serviceTitles.AIR);
+				setServiceDescription(serviceDescriptions.clearning);
 				break;
 			case "restoration":
 				setPageType(pageTypes.WATER);
 				setServiceTitle(serviceTitles.WATER);
+				setServiceDescription(serviceDescriptions.restoration);
 				break;
 			default:
 				setPageType(pageTypes.AIR);
 				setServiceTitle(serviceTitles.AIR);
+				setServiceDescription(serviceDescriptions.clearning);
 				break;
 		}
 
@@ -86,6 +97,7 @@ const LandingPage: React.FC<Props> = () => {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						backgroundRepeat: "no-repeat",
+						minHeight: "300px",
 					}}
 				>
 					<div
@@ -94,7 +106,6 @@ const LandingPage: React.FC<Props> = () => {
 							padding: "20px",
 							textAlign: "center",
 							borderRadius: "10px",
-							width: "100%",
 						}}
 					>
 
@@ -106,7 +117,7 @@ const LandingPage: React.FC<Props> = () => {
 							padding: "20px",
 						}}
 					>
-						{serviceTitle} Services
+						{serviceTitle} {serviceDescription && ` ${serviceDescription}`}
 
 					</h1>
 					</div>

@@ -5,6 +5,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
 }
 
 code {
@@ -814,7 +815,7 @@ textarea {
 
 .footerLogoArea {
 	max-width: 390px;
-	min-width: 390px;
+	/* min-width: 390px; */
 	margin-right: 4em;
 }
 
@@ -1051,6 +1052,7 @@ textarea {
 	display: flex;
 	flex-flow: column ;
 	width: 100vw;
+	overflow-x: hidden;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 4em;
@@ -1069,7 +1071,7 @@ textarea {
 	align-items: center;
 	width: 100%;
 	background-color: red;
-	min-height: 450px;
+	/* min-height: 450px; */
 	
 }
 

@@ -11,13 +11,19 @@ export enum pageTypes {
 }
 
 export enum serviceTitles {
-    AIR = 'Air Ducts',
+    AIR = 'Air Duct',
     MOLD = 'Mold',
     HARDWOOD = 'Hardwood',
     CRIME = 'Crime Scene',
     CARPET = 'Carpet',
-    DRYER = 'Dryer Vents',
+    DRYER = 'Dryer Vent',
     WATER = 'Water & Fire Damage',
     TILE = 'Tile & Grout',
     UPHOLSTERY = 'Upholstery',
+}
+
+export enum serviceDescriptions {
+    clearning = 'Cleaning',
+    restoration = 'Restoration',
+    removal = 'Removal',
 }

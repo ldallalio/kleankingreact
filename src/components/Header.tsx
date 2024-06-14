@@ -9,8 +9,9 @@ function Header() {
   const showMenu = () => {
     const menu = document.getElementById('mobileMenuContent');
     const hero = document.getElementsByClassName('heroContainer');
-    if(!menu || !hero) return;
-    if ((menu as HTMLElement).style.display === 'none') {
+    console.log(menu, hero)
+    if(!menu || hero.length === 0) return;
+    if ((menu as HTMLElement)?.style.display === 'none') {
       (menu as HTMLElement).style.display = 'flex';
       (menu as HTMLElement).style.opacity = '1';
       (menu as HTMLElement).style.transition = '3s ease-in-out';
