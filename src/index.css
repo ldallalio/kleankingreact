@@ -82,6 +82,7 @@ button:hover {
 }
 
 @media screen and (max-width: 600px) {
+
 	/* .socialIcons{
     display:none;
   } */
@@ -270,24 +271,66 @@ li.active a {
 /* ********************************************************************** */
 
 .heroContainer {
-	height: calc(100vh - 138px);
-	background-image: url(./assets/images/heroImage.webp);
+	height: calc(65vh - 138px);
+	background-image: url(./assets/videos/KleanKingCarpetCleaningVideo.mp4);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	display: flex;
 	animation-name: fade-in;
 	animation-duration: 2s;
+	justify-content: flex-end;
+	position: relative;
 }
 
 .heroContent {
+	position: absolute;
+	display: flex;
+	justify-content: flex-end;
 	background: rgb(255, 255, 255);
-	background: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	width: 70%;
+	background: linear-gradient(-90deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 100%);
+	width: 100%;
+	z-index: 100;
+	height: calc(65vh - 138px);
+}
+
+.heroButtons {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	gap: 1.6rem;
+
+}
+
+.heroButton:first-child {
+	background-color: rgb(22, 70, 135);
+	color: white;
+}
+
+.heroButton {
+	padding: 0.8em;
+	background-color: rgb(209, 29, 35);
+	color: white;
+	font-weight: bold;
+	border: none;
+	font-size: 1.6em;
+	width: 500px;
+}
+
+@media screen and (max-width: 550px) {
+	.heroButton {
+		width: auto;
+		font-size: 1.3em;
+	}
+}
+
+.heroButton:hover {
+	transition: 0.8ms;
+	background-color: gold;
+	color: black;
+
 }
 
 .heroText {
@@ -328,7 +371,7 @@ li.active a {
 
 @media screen and (max-width: 650px) {
 	.heroContainer {
-		background-image: url("./assets/images/heroImageMobile.webp");
+		/* background-image: url(./assets/images/KK\ Website\ video.gif); */
 		background-size: cover;
 		background-position: top;
 	}
@@ -336,11 +379,9 @@ li.active a {
 	.heroContent {
 		width: 100%;
 		background: rgb(0, 0, 0);
-		background: linear-gradient(
-			90deg,
-			rgba(0, 0, 0, 0.393) 0%,
-			rgba(255, 255, 255, 0) 100%
-		);
+		background: linear-gradient(90deg,
+				rgba(0, 0, 0, 0.393) 0%,
+				rgba(255, 255, 255, 0) 100%);
 	}
 
 	.heroText {
@@ -373,11 +414,9 @@ li.active a {
 .servicesContainer {
 	padding: 2em;
 	background-color: rgb(255, 255, 255);
-	background-color: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
+	background-color: linear-gradient(90deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 100%);
 
 	display: flex;
 	flex-flow: column;
@@ -879,7 +918,7 @@ textarea {
 	margin-right: 1em;
 }
 
-.footerLinks > * {
+.footerLinks>* {
 	margin-right: 4.2em;
 	display: flex;
 }
@@ -1050,7 +1089,7 @@ textarea {
 
 .landingPage {
 	display: flex;
-	flex-flow: column ;
+	flex-flow: column;
 	width: 100vw;
 	overflow-x: hidden;
 	justify-content: center;
@@ -1072,7 +1111,6 @@ textarea {
 	width: 100%;
 	background-color: red;
 	/* min-height: 450px; */
-	
 }
 
 .landingPage .footer-section {
@@ -1084,4 +1122,97 @@ textarea {
 	min-width: 100vw;
 	position: relative;
 	bottom: 0;
+}
+
+
+.empContainer {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
+	padding: 20px;
+}
+
+@media screen and (max-width: 520px) {
+	.empContainer {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-items: center;
+		/* Center align items */
+	}
+
+	/* Remove specific column assignments for the 4th and 5th items */
+	.empContainer> :nth-child(4),
+	.empContainer> :nth-child(5) {
+		margin: 0 -115% 0 0 !important;
+	}
+
+}
+
+.serviceButton {
+	padding: 0.8em;
+	background-color: rgb(209, 29, 35);
+	color: white;
+	font-weight: bold;
+	border-radius: 7px;
+	border: none;
+	font-size: 1.2em;
+	width: 250px;
+	box-shadow: 0px 50px 50px -38px rgba(0, 11, 158, 0.494);
+}
+
+.serviceButton:hover {
+	transition: 0.8ms;
+	background-color: gold;
+	color: black;
+
+}
+
+.servicesButtons {
+	padding: 2em;
+	margin: 0 auto 0 auto;
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+}
+
+@media screen and (max-width: 800px) {
+	.servicesButtons {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 0;
+	}
+
+	.serviceButton {
+		font-size: 1em;
+		width: 200px;
+	}
+}
+
+
+.aboutVideoSection {
+	min-height: 600px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+}
+
+.aboutVideo {
+	object-fit: cover;
+	border-radius: 10px;
+	border: 1rem solid red;
+	min-height: 300px;
+	width:700px;
+}
+
+@media screen and (max-width: 800px) {
+	.aboutVideoSection{
+		margin:0;
+		height:300px;
+		min-height: 450px;
+	}
+	.aboutVideo {
+		width: 80%;
+	}
 }

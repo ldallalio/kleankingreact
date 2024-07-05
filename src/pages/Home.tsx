@@ -1,22 +1,23 @@
 import { Helmet } from "react-helmet-async";
-import Header from "../components/Header";
+import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
-import Hero from "../components/HeroSection";
-import Services from "../components/Services";
-import About from "../components/About";
+import Hero from "../components/Home/HeroSection";
 import PrevWork from "../components/PreviousWork";
-import Choose from "../components/ChooseUs";
 import Estimate from "../components/EstimateBanner";
-import Footer from "../components/Footer";
+import Footer from "../components/Nav/Footer";
 import { useContext, useEffect } from "react";
 import { GlobalStateContext } from "../App";
 import { NewContactForm } from "../components/NewContactForm";
+import GoldBar from "../components/GoldBar";
+import OurEmployees from "../components/Home/OurEmployees";
+import ServicesButtons from "../components/Home/ServicesButtons";
+import AboutVideo from "../components/Home/AboutVideo";
 
-function Home(){
+function Home() {
 	const global = useContext(GlobalStateContext);
-	useEffect(()=>{
-		global.pageType = 'Home';
-	})
+	useEffect(() => {
+		global.pageType = "Home";
+	});
 	return (
 		<>
 			<Helmet>
@@ -33,22 +34,20 @@ function Home(){
 			<SocialHeader />
 			<Header />
 			<Hero />
-			<Services />
-			<About />
-			<PrevWork />
-			<Choose />
-			{/* <Blog /> */}
+			<GoldBar />
+			<ServicesButtons />
+			<AboutVideo />
+			<OurEmployees />
+			{/* <PrevWork /> */}
 			<div
 				style={{
 					backgroundColor: "white",
 					padding: "20px 0",
-					// textAlign: "center",
 					display: "flex",
 					justifyContent: "center",
 				}}
 			>
-			<NewContactForm />
-
+				<NewContactForm />
 			</div>
 			<Estimate />
 			<Footer />

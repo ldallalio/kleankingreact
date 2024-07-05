@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
 import PageTitle from "../components/PageTitle";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar";
+import Footer from "../components/Nav/Footer";
+import Sidebar from "../components/Nav/Sidebar";
 import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from "react-helmet-async"
