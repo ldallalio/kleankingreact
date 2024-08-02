@@ -6,7 +6,6 @@ import { pageTypes, serviceDescriptions, serviceTitles } from "../common/interfa
 import { NewContactForm } from "../components/NewContactForm";
 import UpdatedTruckImg from '../assets/images/updatedTruckPhoto.png';
 import Footer from "../components/Nav/Footer";
-import { getGoogleReviews } from "../util/googleReviews";
 
 type Props = {};
 

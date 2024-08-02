@@ -1,6 +1,6 @@
 import React from "react";
 import aboutVideoBackground from "../../assets/images/VideoBackground.svg";
-import LoriVideo from "../../assets/videos/AboutVideoLori.mp4";
+import LoriVideo from "../../assets/videos/AboutVideoLoriWithAudio.mp4";
 
 type Props = {};
 
@@ -17,10 +17,10 @@ const AboutVideo = (props: Props) => {
             className="aboutVideoSection"
 		>
 			<video
-				autoPlay
-				loop
+				autoPlay={true}
 				aria-controls="true"
                 className="aboutVideo"
+				controls={true}
 			>
 				<source src={LoriVideo} type="video/mp4" />
 			</video>

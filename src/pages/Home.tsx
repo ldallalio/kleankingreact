@@ -9,6 +9,7 @@ import { useContext, useEffect } from "react";
 import { GlobalStateContext } from "../App";
 import { NewContactForm } from "../components/NewContactForm";
 import GoldBar from "../components/GoldBar";
+import GoogleReviews from "../components/Reviews/GoogleReviews";
 import OurEmployees from "../components/Home/OurEmployees";
 import ServicesButtons from "../components/Home/ServicesButtons";
 import AboutVideo from "../components/Home/AboutVideo";
@@ -37,6 +38,7 @@ function Home() {
 			<GoldBar />
 			<ServicesButtons />
 			<AboutVideo />
+			<GoogleReviews />
 			<OurEmployees />
 			{/* <PrevWork /> */}
 			<div
