@@ -18,7 +18,11 @@ const ServicesButtons = (props: Props) => {
 			<div className="servicesButtons">
 				{services.map((service, index) => {
 					return (
-						<button key={index} className="serviceButton">
+						<button key={index} className="serviceButton"
+							onClick={() => {
+								window.location.href = "/" + service;
+							}}
+						>
 							{service}
 						</button>
 					);

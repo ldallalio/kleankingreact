@@ -4,7 +4,7 @@ import bgVideo from "../../assets/videos/KleanKingCarpetCleaningVideo.mp4";
 function HeroSection() {
 	return (
 		<section className="heroContainer">
-			<video 
+			<video
 				style={{
 					zIndex: -1,
 					width: "100%",
@@ -12,18 +12,19 @@ function HeroSection() {
 					objectFit: "cover",
 				}}
 				autoPlay loop muted aria-controls="true" className="heroVideo">
-				<source src={bgVideo} type="video/mp4" />
-				</video>
-				<div className="heroContent">
-					{/* Two Large Buttons in a column - Emergency services - Request Consultation */}
+				<source
+					src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/KleanKingCarpetCleaningVideo.mp4'} type="video/mp4" />
+			</video>
+			<div className="heroContent">
+				{/* Two Large Buttons in a column - Emergency services - Request Consultation */}
 
-					<div className="heroButtons">
-						<button className="heroButton" id="firstHeroButton">
-							SCHEDULE A CONSULTATION
-						</button>
-						<button className="heroButton">REQUEST EMERGENCY SERVICES</button>
-					</div>
+				<div className="heroButtons">
+					<button className="heroButton" id="firstHeroButton">
+						SCHEDULE A CONSULTATION
+					</button>
+					<button className="heroButton">REQUEST EMERGENCY SERVICES</button>
 				</div>
+			</div>
 		</section>
 	);
 }

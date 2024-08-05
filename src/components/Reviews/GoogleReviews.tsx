@@ -48,7 +48,7 @@ const GoogleReviews = () => {
                 style={{
                     padding: "1rem",
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
                     // border: "1px solid red",
                     alignSelf: "center",
                     justifyContent: "center",

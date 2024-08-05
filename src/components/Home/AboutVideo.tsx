@@ -1,5 +1,4 @@
-import React from "react";
-import aboutVideoBackground from "../../assets/images/VideoBackground.svg";
+import * as React from "react";
 import LoriVideo from "../../assets/videos/AboutVideoLoriWithAudio.mp4";
 
 type Props = {};
@@ -9,7 +8,7 @@ const AboutVideo = (props: Props) => {
 		<section
 			aria-label="About Video"
 			style={{
-				backgroundImage: `url(${aboutVideoBackground})`,
+				backgroundImage: `url(https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4)`,
 				backgroundSize: "contain",
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
