@@ -1,6 +1,3 @@
-import React from "react";
-import bgVideo from "../../assets/videos/KleanKingCarpetCleaningVideo.mp4";
-
 function HeroSection() {
 	return (
 		<section className="heroContainer">

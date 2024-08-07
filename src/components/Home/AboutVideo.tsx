@@ -21,7 +21,7 @@ const AboutVideo = (props: Props) => {
                 className="aboutVideo"
 				controls={true}
 			>
-				<source src={LoriVideo} type="video/mp4" />
+				<source src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4'}  type="video/mp4" />
 			</video>
 		</section>
 	);
