@@ -1,27 +1,28 @@
 import * as React from "react";
-import LoriVideo from "../../assets/videos/AboutVideoLoriWithAudio.mp4";
+import aboutVideoBackground from "../../assets/images/VideoBackground.svg";
 
 type Props = {};
 
 const AboutVideo = (props: Props) => {
 	return (
 		<section
+			id="about"
 			aria-label="About Video"
 			style={{
-				backgroundImage: `url(https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4)`,
-				backgroundSize: "contain",
+				backgroundImage: `url(${aboutVideoBackground})`,
+				backgroundSize: "contain",	
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
 			}}
-            className="aboutVideoSection"
+			className="aboutVideoSection"
 		>
 			<video
-				autoPlay={true}
+				autoPlay={false}
 				aria-controls="true"
-                className="aboutVideo"
+				className="aboutVideo"
 				controls={true}
 			>
-				<source src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4'}  type="video/mp4" />
+				<source src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4'} type="video/mp4" />
 			</video>
 		</section>
 	);

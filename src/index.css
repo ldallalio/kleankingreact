@@ -140,11 +140,15 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
-
 .getQuote {
 	display: flex;
 	align-items: center;
 	color: black;
+	transition: all 0.3s ease-in-out;
+}
+
+.getQuote:Hover {
+	transform: scale(1.1);
 }
 
 .getQuote a {
@@ -676,9 +680,12 @@ li.active a {
 }
 
 .contactImage {
+	height:650px;
+	overflow-x: scroll;
+	overflow-y: hidden;
 	width: 50%;
 	display: flex;
-	background-color: bisque;
+	background-color: white;
 }
 
 .formContainer {
@@ -1161,7 +1168,7 @@ textarea {
 }
 
 .serviceButton:hover {
-	transition: 0.8ms;
+	transition: 0.8s;
 	background-color: gold;
 	color: black;
 

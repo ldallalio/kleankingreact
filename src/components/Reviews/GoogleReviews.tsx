@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import googleReivews from "../../util/GoogleReviews.json"
 import { IReview } from '../../common/interfaces'
 import { Icon } from '@fluentui/react/lib/Icon'
-import { initializeIcons } from '@fluentui/react'
 
 
 
@@ -23,7 +22,6 @@ const GoogleReviews = () => {
     }
 
     useEffect(() => {
-        initializeIcons();
         getFiveRandomReviews()
     }, [])
     return (

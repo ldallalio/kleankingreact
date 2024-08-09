@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -12,22 +12,25 @@ import Water from "./pages/WaterAndFire";
 import Tile from "./pages/Tile";
 import Upholstery from "./pages/Upholstery";
 import LandingPage from "./pages/LandingPage";
+import { initializeIcons } from "@fluentui/react";
 
 export const GlobalStateContext = React.createContext<any>(null);
-
+useEffect(() => {
+    initializeIcons();
+  },[]);
 function App() {
 	return (
 		<GlobalStateContext.Provider value={{}}>
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/airducts' element={<Airducts />} />
+				<Route path='/air' element={<Airducts />} />
 				<Route path='/mold' element={<Mold />} />
 				<Route path='/hardwood' element={<Hardwood />} />
-				<Route path='/crimescene' element={<Crime />} />
+				<Route path='/crime' element={<Crime />} />
 				<Route path='/carpet' element={<Carpet />} />
-				<Route path='/dryervent' element={<Dryer />} />
-				<Route path='/waterandfiredamage' element={<Water />} />
+				<Route path='/dryer' element={<Dryer />} />
+				<Route path='/water' element={<Water />} />
 				<Route path='/tile' element={<Tile />} />
 				<Route path='/upholstery' element={<Upholstery />} />
 				<Route path='/landing' element={<LandingPage />} /> 

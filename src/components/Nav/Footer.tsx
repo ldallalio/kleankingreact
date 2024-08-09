@@ -94,9 +94,9 @@ function Footer() {
 						<a className="footerLink" href="/#services">
 							Our Services
 						</a>
-						<a className="footerLink" href="/#portfolio">
+						{/* <a className="footerLink" href="/#portfolio">
 							Our Work
-						</a>
+						</a> */}
 						<a className="footerLink" href="/#contactus">
 							Contact
 						</a>

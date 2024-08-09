@@ -16,10 +16,19 @@ function HeroSection() {
 				{/* Two Large Buttons in a column - Emergency services - Request Consultation */}
 
 				<div className="heroButtons">
-					<button className="heroButton" id="firstHeroButton">
+					<button className="heroButton" id="firstHeroButton"
+						onClick={() => {
+							window.location.href = "/#contactus";
+						}}
+					>
 						SCHEDULE A CONSULTATION
 					</button>
-					<button className="heroButton">REQUEST EMERGENCY SERVICES</button>
+					<button className="heroButton"
+					
+					onClick={() => {
+						window.location.href = "/#contactus";
+					}}
+					>REQUEST EMERGENCY SERVICES</button>
 				</div>
 			</div>
 		</section>
