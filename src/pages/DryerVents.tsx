@@ -8,8 +8,12 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
+import dryer_1 from "../assets/images/services/Dryer/dryervent.png";
 function DryerVents() {
 	const pageName = "dryer";
+	const images: string[] = [
+		dryer_1,
+	]
 
 	useEffect(() => {
 		setActive();
@@ -178,7 +182,9 @@ function DryerVents() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact 
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

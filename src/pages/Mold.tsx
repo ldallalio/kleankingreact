@@ -8,9 +8,13 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
+import images_1 from "../assets/images/services/Mold/Mold.png";
 function Mold() {
 	const navigate = useNavigate();
 	const pageName = "mold";
+	const images: string[] = [
+		images_1,
+	];
 
 	useEffect(() => {
 		setActive();
@@ -67,7 +71,9 @@ function Mold() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact
+				images={images}
+			 />
 			<Banner />
 			<Footer />
 		</>

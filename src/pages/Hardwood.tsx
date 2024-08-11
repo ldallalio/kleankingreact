@@ -8,10 +8,16 @@ import Footer from '../components/Nav/Footer';
 import Banner from '../components/EstimateBanner';
 import {Helmet} from 'react-helmet-async'
 import Sidebar from '../components/Nav/Sidebar';
+import image_2 from '../assets/images/services/Hardwood/HARDWOOD FLOOR COATING.jpg';
+import image_1 from '../assets/images/services/Hardwood/HARDWOOD FLOOR.jpg';
 
 function Hardwood() {
   const navigate = useNavigate();
   const pageName = 'hardwood';
+  const images: string[] = [
+    image_1,
+    image_2,
+  ];
 
   const setActive = () => {
     //@ts-ignore
@@ -120,7 +126,9 @@ function Hardwood() {
         </div>
         <Sidebar />
       </div>
-      <Contact />
+      <Contact 
+        images={images} 
+      />
       <Banner />
       <Footer />
     </>

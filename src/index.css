@@ -536,7 +536,6 @@ li.active a {
 
 .aboutImage {
 	/* background-image: url("./assets/images/truckwithbox.webp"); */
-	background-image: url("./assets/images/kleankingvan.webp");
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -694,6 +693,7 @@ li.active a {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	min-width: 325px;
 }
 
 .form {
@@ -720,7 +720,7 @@ textarea {
 
 .contactImage img {
 	display: flex;
-	width: 100%;
+	/* width: 100%; */
 	height: auto;
 }
 
@@ -759,9 +759,9 @@ textarea {
 
 	.contactImage {
 		margin-top: 2em;
-		width: 100%;
 		display: flex;
 		background-color: bisque;
+		width:auto;
 	}
 
 	.form input,

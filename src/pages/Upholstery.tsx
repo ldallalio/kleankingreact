@@ -8,9 +8,14 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
+import image_1 from "../assets/images/services/UPHOLSTERY/UPHOLSTERY CLEANING.jpg";
+import video_1 from "../assets/images/services/UPHOLSTERY/UPHOLSTERY VIDEO.MOV";
 function Upholstery() {
 	const navigate = useNavigate();
 	const pageName = "upholstery";
+	const images: string[] = [
+		image_1,
+	];
 
 	useEffect(() => {
 		setActive();
@@ -45,7 +50,6 @@ function Upholstery() {
 					</p>
 
 					<p>
-						{" "}
 						Klean King can help you SAVE MONEY. Instead of spending thousands of
 						dollars on new furniture, allow us to clean your furniture for a
 						fraction of the cost! Our upholstery cleaning is quick, hassle-free,
@@ -54,7 +58,6 @@ function Upholstery() {
 					</p>
 
 					<p>
-						{" "}
 						So, give us a call TODAY! With FREE ESTIMATES by phone, there is
 						nothing to lose!
 					</p>
@@ -62,7 +65,6 @@ function Upholstery() {
 					<p>Our upholstery cleaning service includes the following: </p>
 
 					<p>
-						{" "}
 						We use only the safest furniture cleaning techniques, using
 						organic-based cleansers.
 					</p>
@@ -70,32 +72,45 @@ function Upholstery() {
 					<p> Our staff offers only the most personalized level of care.</p>
 
 					<p>
-						{" "}
 						We offer same day service and will gladly schedule an appointment
 						anytime to fit your needs.
 					</p>
 
 					<p>
-						{" "}
 						All cleansers are safe for the environment, pets, and family members
 						of all ages.
 					</p>
 
 					<p>
-						{" "}
 						We will have your upholstery cleaning service completed in no time,
 						using our speedy drying process.
 					</p>
 
 					<p>
-						{" "}
 						We remove the harmful allergens that are deeply embedded in your
 						couch or sofa.
 					</p>
+					<h2> Upholstery Cleaning </h2>
+					<video
+						className='serviceVideo'
+						controls
+						src={video_1}
+						style={{ 
+							width: "100%",
+							maxWidth: "600px",
+							borderRadius: "10px",
+							boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+						 }}
+						
+						// poster={image_1}
+					/>
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact
+			
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

@@ -14,11 +14,10 @@ import Upholstery from "./pages/Upholstery";
 import LandingPage from "./pages/LandingPage";
 import { initializeIcons } from "@fluentui/react";
 
+initializeIcons();
 export const GlobalStateContext = React.createContext<any>(null);
-useEffect(() => {
-    initializeIcons();
-  },[]);
 function App() {
+
 	return (
 		<GlobalStateContext.Provider value={{}}>
 		<BrowserRouter>

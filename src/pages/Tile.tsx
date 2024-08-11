@@ -8,9 +8,15 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
+import image_1 from "../assets/images/services/Tile/screenshot_mbp 2024-08-10 at 10.57.16 PM.png";
+import image_2 from "../assets/images/services/Tile/screenshot_mbp 2024-08-10 at 10.57.36 PM.png";
 function Tile() {
 	const navigate = useNavigate();
 	const pageName = "tile";
+	const images: string[] = [
+		image_1,
+		image_2,
+	]
 
 	useEffect(() => {
 		setActive();
@@ -62,7 +68,9 @@ function Tile() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

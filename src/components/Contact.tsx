@@ -29,6 +29,8 @@ function Contact(props: Props) {
       <div className="contactImage"
         style={{
           position: "relative",
+          height: "650px",
+          maxHeight:"650px"
         }}
       >
         {/* Left Button */}
@@ -55,7 +57,7 @@ function Contact(props: Props) {
         
         {props.images && (
           <img
-            style={{ height: "fit-content" }}
+            style={{ height: "100%", width: "100%", objectFit: "cover" }}
             src={props.images[currentIndex]}
             alt="contact"
           />

@@ -8,9 +8,13 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
+import crime_Image from "../assets/images/crimescene.webp";
 function Crime() {
 	const navigate = useNavigate();
 	const pageName = "crime";
+	const images: string[] = [
+		crime_Image
+	];
 
 	useEffect(() => {
 		setActive();
@@ -87,7 +91,9 @@ function Crime() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact 
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

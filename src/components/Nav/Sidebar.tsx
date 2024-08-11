@@ -9,16 +9,16 @@ const Sidebar = (props: Props) => {
         <div className='servicePageSidebar'>
             <h3>Our Services</h3>
             <ul>
-                <li onClick={() => navigate("/airducts")}>Air Ducts</li>
+                <li onClick={() => navigate("/air")}>Air Ducts</li>
                 <li onClick={() => navigate("/carpet")}>Carpet & Rugs</li>
                 <li onClick={() => navigate("/tile")}>Tile & Grout</li>
                 <li onClick={() => navigate("/hardwood")}>Hardwood Floors</li>
-                <li onClick={() => navigate("/dryervent")}>Dryer Vents</li>
+                <li onClick={() => navigate("/dryer")}>Dryer Vents</li>
                 <li onClick={() => navigate("/mold")}>Mold Removal</li>
-                <li onClick={() => navigate("/waterandfiredamage")}>
+                <li onClick={() => navigate("/water")}>
                     Water & Fire Damage
                 </li>
-                <li onClick={() => navigate("/crimescene")}>
+                <li onClick={() => navigate("/crime")}>
                     Crime Scene Cleaning
                 </li>
                 <li onClick={() => navigate("/upholstery")}>Upholstery</li>

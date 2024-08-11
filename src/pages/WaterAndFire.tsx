@@ -8,9 +8,13 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
+import Truck from "../assets/images/waterdamage.webp";
 function WaterAndFire() {
 	const navigate = useNavigate();
 	const pageName = "water";
+	const images: string[] = [
+		Truck
+	];
 
 	useEffect(() => {
 		setActive();
@@ -153,7 +157,9 @@ function WaterAndFire() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact 
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

@@ -9,10 +9,17 @@ import { useNavigate } from "react-router-dom";
 import {Helmet }from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
 import { GlobalStateContext } from "../App";
+import image_1 from "../assets/images/services/Carpet/IMG_4064.jpg";
+import rug_video from "../assets/images/services/Carpet/RUG CLEANING.MOV";
+import carpet_2 from "../assets/images/services/Carpet/carpet_2.png";
 function Carpet() {
 	const navigate = useNavigate();
 	const pageName = "carpet";
 	const global = useContext(GlobalStateContext);
+	const images: string[] = [
+		image_1,
+		carpet_2,
+	]
 	useEffect(()=>{
 		global.pageType = 'Carpet';
 	})
@@ -46,7 +53,9 @@ function Carpet() {
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
+					
 					<h2>Residential and Commercial Carpet & Rugs</h2>
+
 					<p>
 						No matter how clean you keep your home, carpets typically harbor
 						significant quantities of dust mites, pollen, and other
@@ -65,10 +74,26 @@ function Carpet() {
 						Mattress Cleaning, Area Rug Cleaning Pet Treatments, Carpet and
 						Fabric Protectors, Deodorization.
 					</p>
+					<h2>Rug Cleaning Process </h2>
+					<video
+						className='serviceVideo'
+						controls
+						src={rug_video}
+						style={{ 
+							width: "100%",
+							maxWidth: "600px",
+							borderRadius: "10px",
+							boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+						 }}
+						
+						// poster={image_1}
+					/>
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>
