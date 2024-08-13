@@ -10,6 +10,7 @@ import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
 import image_1 from "../assets/images/services/Tile/screenshot_mbp 2024-08-10 at 10.57.16 PM.png";
 import image_2 from "../assets/images/services/Tile/screenshot_mbp 2024-08-10 at 10.57.36 PM.png";
+import video_1 from "../assets/images/services/Tile/tilevideo.MOV"
 function Tile() {
 	const navigate = useNavigate();
 	const pageName = "tile";
@@ -65,6 +66,20 @@ function Tile() {
 						please give us a call. Your business is very important to us and we
 						will tell you the price before we do the work.
 					</p>
+					<video
+						className='serviceVideo'
+						controls
+						src={video_1}
+						style={{ 
+							width: "100%",
+							maxWidth: "600px",
+							// maxHeight:"500px",
+							borderRadius: "10px",
+							boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+						 }}
+						
+						// poster={image_1}
+					/>
 				</div>
 				<Sidebar />
 			</div>
