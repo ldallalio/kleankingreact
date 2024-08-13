@@ -1,5 +1,6 @@
 import * as React from "react";
 import aboutVideoBackground from "../../assets/images/VideoBackground.svg";
+import cover from "../../assets/images/YoutubeCover.png"
 
 type Props = {};
 
@@ -21,6 +22,7 @@ const AboutVideo = (props: Props) => {
 				aria-controls="true"
 				className="aboutVideo"
 				controls={true}
+				poster={cover}
 			>
 				<source src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4'} type="video/mp4" />
 			</video>
