@@ -19,6 +19,24 @@ function Home() {
 	useEffect(() => {
 		global.pageType = "Home";
 	});
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Denham Springs, LA",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surrond areas."
+	 };
+
+
 	return (
 		<>
 			<Helmet>
@@ -31,6 +49,9 @@ function Home() {
 					name="keywords"
 					content="cleaning service, residential cleaning, commercial cleaning, professional cleaners"
 				/>
+				<script type="application/ld+json">
+               {JSON.stringify(schemaData)}
+            </script>
 			</Helmet>
 			<SocialHeader />
 			<Header />
