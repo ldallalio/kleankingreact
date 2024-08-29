@@ -4,10 +4,11 @@ import emp2 from "../../assets/images/employees/emp2.webp";
 import emp3 from "../../assets/images/employees/emp3.webp";
 import emp4 from "../../assets/images/employees/tanner.webp";
 import emp5 from "../../assets/images/employees/robert.webp";
+import emp6 from "../../assets/images/employees/justin.webp";
 type Props = {};
 
 const OurEmployees = (props: Props) => {
-	const images = [emp1, emp2, emp3, emp4, emp5];
+	const images = [emp1, emp2, emp3, emp4, emp5, emp6];
 	return (
 		<section aria-label="Our Employees">
 			<div

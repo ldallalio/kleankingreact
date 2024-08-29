@@ -1,5 +1,5 @@
 # Awaiting Photos from Faren for Services Section
 
-# Working on About Section Currently 
-#       - Need to fix button
-#       - Need to fix text css
+## TODO
+
+-   Need to Add RTS Sections For Each Page

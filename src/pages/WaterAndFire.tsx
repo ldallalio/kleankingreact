@@ -27,11 +27,27 @@ function WaterAndFire() {
 		//Add active to Services
 		document.getElementsByTagName("li")[2].classList.add("active");
 	};
-
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Water and Fire Restoration - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/water",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
 				<title>Water and Fire Restoration</title>
+				{JSON.stringify(schemaData)}
 			</Helmet>
 			<SocialHeader />
 			<Header />

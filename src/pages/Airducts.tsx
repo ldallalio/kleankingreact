@@ -52,11 +52,27 @@ function Airducts() {
 			serviceElement.classList.add("active");
 		}
 	};
-
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Air Ducts - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/air",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
 				<title>Air Ducts</title>
+				{JSON.stringify(schemaData)}
 			</Helmet>
 			<SocialHeader />
 			<Header />

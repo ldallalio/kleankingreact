@@ -31,9 +31,9 @@ function Home() {
 		},
 		"areaServed": {
 		   "@type": "Place",
-		   "name": "Denham Springs, LA",
+		   "name": "Monroe, LA, and surrounding areas",
 		},
-		"description": "Local Professional Cleaning Services for Monroe LA and surrond areas."
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
 	 };
 
 

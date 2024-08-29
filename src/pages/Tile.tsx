@@ -10,7 +10,7 @@ import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
 import image_1 from "../assets/images/services/Tile/screenshot_mbp 2024-08-10 at 10.57.16 PM.png";
 import image_2 from "../assets/images/services/Tile/screenshot_mbp 2024-08-10 at 10.57.36 PM.png";
-import video_1 from "../assets/images/services/Tile/tilevideo.MOV"
+import video_1 from "../assets/images/services/Tile/tilevideo.mp4"
 function Tile() {
 	const navigate = useNavigate();
 	const pageName = "tile";
@@ -30,11 +30,27 @@ function Tile() {
 		//Add active to Services
 		document.getElementsByTagName("li")[2].classList.add("active");
 	};
-
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Tile and Grout - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/tile",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
 				<title>Tile & Grout Cleaning</title>
+				{JSON.stringify(schemaData)}
 			</Helmet>
 			<SocialHeader />
 			<Header />

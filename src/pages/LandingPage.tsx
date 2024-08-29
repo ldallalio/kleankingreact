@@ -71,13 +71,24 @@ const LandingPage: React.FC<Props> = () => {
 				break;
 		}
 
-		// getGoogleReviews().then(reviews => {
-		// 	console.log(reviews);
-		// }).catch(err => {
-		// 	console.error(err);
-		// });
 	}, []);
-
+	
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Klean King - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
@@ -85,6 +96,8 @@ const LandingPage: React.FC<Props> = () => {
 				<meta name="description" content={`Klean King offers exceptional ${serviceTitle} services. Contact us for a free estimate and experience top-notch cleaning services.`} />
 				<meta name="keywords" content={`Klean King, ${serviceTitle} services, cleaning services`} />
 				<meta name="author" content="Klean King" />
+				{JSON.stringify(schemaData)}
+
 			</Helmet>
 			<SocialHeader />
 			<Header />

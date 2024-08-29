@@ -1,6 +1,6 @@
 import * as React from "react";
 import aboutVideoBackground from "../../assets/images/VideoBackground.svg";
-import cover from "../../assets/images/YoutubeCover.png"
+import cover from "../../assets/images/YoutubeCover.webp"
 
 type Props = {};
 
