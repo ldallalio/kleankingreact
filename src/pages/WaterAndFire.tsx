@@ -1,16 +1,34 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
 import PageTitle from "../components/PageTitle";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Footer from "../components/Nav/Footer";
 import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Nav/Sidebar";
+import image_1 from "../assets/images/services/water_fire/IMG_2571.webp";
+import image_2 from "../assets/images/services/water_fire/IMG_2578.webp";
+import image_3 from "../assets/images/services/water_fire/IMG_9356.webp";
+import image_4 from "../assets/images/services/water_fire/IMG_9424.webp";
+import image_5 from "../assets/images/services/water_fire/IMG_9497.webp";
+import image_6 from "../assets/images/services/water_fire/IMG_9507.webp";
+import image_7 from "../assets/images/services/water_fire/IMG_9521.webp";
+import image_8 from "../assets/images/services/water_fire/IMG_9524.webp";
 function WaterAndFire() {
 	const navigate = useNavigate();
 	const pageName = "water";
+	const images: string[] = [
+		image_1,
+		image_2,
+		image_3,
+		image_4,
+		image_5,
+		image_6,
+		image_7,
+		image_8,
+	];
 
 	useEffect(() => {
 		setActive();
@@ -23,11 +41,27 @@ function WaterAndFire() {
 		//Add active to Services
 		document.getElementsByTagName("li")[2].classList.add("active");
 	};
-
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Water and Fire Restoration - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/water",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
 				<title>Water and Fire Restoration</title>
+				{JSON.stringify(schemaData)}
 			</Helmet>
 			<SocialHeader />
 			<Header />
@@ -153,7 +187,9 @@ function WaterAndFire() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact 
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

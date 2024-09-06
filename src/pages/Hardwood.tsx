@@ -1,17 +1,23 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from "../components/Nav/Header";
 import SocialHeader from '../components/SocialHeader';
 import PageTitle from '../components/PageTitle';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import Footer from '../components/Nav/Footer';
 import Banner from '../components/EstimateBanner';
 import {Helmet} from 'react-helmet-async'
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Nav/Sidebar';
+import image_2 from '../assets/images/services/Hardwood/HARDWOOD FLOOR COATING.jpg';
+import image_1 from '../assets/images/services/Hardwood/HARDWOOD FLOOR.jpg';
 
 function Hardwood() {
   const navigate = useNavigate();
   const pageName = 'hardwood';
+  const images: string[] = [
+    image_1,
+    image_2,
+  ];
 
   const setActive = () => {
     //@ts-ignore
@@ -23,11 +29,28 @@ function Hardwood() {
   useEffect(() => {
     setActive();
   }, []);
-
+  const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Hardwood Floors - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/hardwood",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
   return (
     <>
       <Helmet>
 				<title>Hardwood Floor Cleaning</title>
+				{JSON.stringify(schemaData)}
+
 			</Helmet>
       <SocialHeader />
       <Header />
@@ -120,7 +143,9 @@ function Hardwood() {
         </div>
         <Sidebar />
       </div>
-      <Contact />
+      <Contact 
+        images={images} 
+      />
       <Banner />
       <Footer />
     </>

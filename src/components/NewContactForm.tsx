@@ -69,6 +69,7 @@ export const NewContactForm: React.FC<Props> = () => {
 
 	return (
 		<div
+			id='contactus'
 			className="contactFormContainer"
 			style={{
 				display: "flex",
@@ -80,8 +81,8 @@ export const NewContactForm: React.FC<Props> = () => {
 				borderRadius: "10px",
 				width: "50%%",
 				boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-				maxWidth: "500px",
-				minWidth: "300px",
+				// maxWidth: "500px",
+				// minWidth: "300px",
 				// marginTop: '32px'
 			}}
 		>
@@ -111,6 +112,8 @@ export const NewContactForm: React.FC<Props> = () => {
 					textAlign: "center",
 					color: "rgb(4, 12, 122)",
 					margin: 0,
+					fontSize: "1.2rem",
+					width: "70%",
 				}}
 			>
 				Please fill out the form for a FREE ESTIMATE or to contact us for any
@@ -124,8 +127,8 @@ export const NewContactForm: React.FC<Props> = () => {
 					display: "flex",
 					flexDirection: "column",
 					gap: "10px",
-					width: "100%",
-					maxWidth: "400px",
+					width: "90%",
+					// maxWidth: "400px",
 				}}
 			>
 				<Controller
@@ -137,6 +140,9 @@ export const NewContactForm: React.FC<Props> = () => {
 							{...field}
 							label="Name"
 							required
+							styles={{
+								fieldGroup:{ height:'40px'}
+							}}
 							errorMessage={
 								errors.name ? (errors.name as FieldError).message : undefined
 							}
@@ -158,6 +164,9 @@ export const NewContactForm: React.FC<Props> = () => {
 							{...field}
 							label="Email"
 							required
+							styles={{
+								fieldGroup:{ height:'40px'}
+							}}
 							errorMessage={
 								errors.email ? (errors.email as FieldError).message : undefined
 							}
@@ -180,6 +189,9 @@ export const NewContactForm: React.FC<Props> = () => {
 							{...field}
 							label="Phone"
 							required
+							styles={{
+								fieldGroup:{ height:'40px'}
+							}}
 							errorMessage={
 								errors.phone ? (errors.phone as FieldError).message : undefined
 							}

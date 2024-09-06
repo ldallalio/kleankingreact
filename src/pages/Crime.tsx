@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
 import PageTitle from "../components/PageTitle";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Footer from "../components/Nav/Footer";
 import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Nav/Sidebar";
+import crime_Image from "../assets/images/crimescene.webp";
 function Crime() {
 	const navigate = useNavigate();
 	const pageName = "crime";
+	const images: string[] = [
+		crime_Image
+	];
 
 	useEffect(() => {
 		setActive();
@@ -24,10 +28,27 @@ function Crime() {
 		document.getElementsByTagName("li")[2].classList.add("active");
 	};
 
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Crime Scene - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/crime",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
 				<title>Crime Scene Cleanup</title>
+				{JSON.stringify(schemaData)}
 			</Helmet>
 			<SocialHeader />
 			<Header />
@@ -87,7 +108,9 @@ function Crime() {
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact 
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

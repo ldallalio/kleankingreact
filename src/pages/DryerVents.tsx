@@ -1,15 +1,22 @@
+import * as React from "react";
 import { useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
 import PageTitle from "../components/PageTitle";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Footer from "../components/Nav/Footer";
 import Banner from "../components/EstimateBanner";
-import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Nav/Sidebar";
+import dryer_1 from "../assets/images/services/Dryer/before.webp";
+import dryer_2 from "../assets/images/services/Dryer/after.webp";
+import dryer_3 from "../assets/images/services/Dryer/lift.webp";
 function DryerVents() {
 	const pageName = "dryer";
+	const images: string[] = [
+		dryer_1,
+		dryer_2
+	]
 
 	useEffect(() => {
 		setActive();
@@ -22,11 +29,27 @@ function DryerVents() {
 		//Add active to Services
 		document.getElementsByTagName("li")[2].classList.add("active");
 	};
-
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Dryer Vents - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/dryer",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
 				<title>Dryer Vents</title>
+				{JSON.stringify(schemaData)}
 			</Helmet>
 			<SocialHeader />
 			<Header />
@@ -174,11 +197,21 @@ function DryerVents() {
 							Klean King today to schedule a thorough and professional cleaning
 							for your dryer vent.
 						</p>
+						<img src={dryer_3} alt="Dryer Vent Cleaning" 
+							style={{	
+								width: "100%",
+								maxWidth: "600px",
+								borderRadius: "10px",
+								boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+							}}
+						/>
 					</p>
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact 
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>

@@ -27,3 +27,10 @@ export enum serviceDescriptions {
     restoration = 'Restoration',
     removal = 'Removal',
 }
+
+export interface IReview {
+    name: string;
+    star_rating: number;
+    date: string;
+    review: string;
+}

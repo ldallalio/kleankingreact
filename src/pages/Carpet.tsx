@@ -1,18 +1,25 @@
 import React, { useContext, useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
 import PageTitle from "../components/PageTitle";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Footer from "../components/Nav/Footer";
 import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet }from 'react-helmet-async'
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Nav/Sidebar";
 import { GlobalStateContext } from "../App";
+import image_1 from "../assets/images/services/Carpet/IMG_4064.jpg";
+import rug_video from "../assets/images/services/Carpet/RUG CLEANING.MOV";
+import carpet_2 from "../assets/images/services/Carpet/carpet_2.png";
 function Carpet() {
 	const navigate = useNavigate();
 	const pageName = "carpet";
 	const global = useContext(GlobalStateContext);
+	const images: string[] = [
+		image_1,
+		carpet_2,
+	]
 	useEffect(()=>{
 		global.pageType = 'Carpet';
 	})
@@ -27,7 +34,22 @@ function Carpet() {
 		//Add active to Services
 		document.getElementsByTagName("li")[2].classList.add("active");
 	};
-
+	const schemaData = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Rugs, Carpet & More - Residental and Commercial Cleaning",
+		"provider": {
+		   "@type": "Organization",
+		   "name": "Klean King Carpet",
+		   "url": "https://kleankingcarpet.com/carpet",
+		   "logo": "https://kleankingcarpet.com/logo.png",
+		},
+		"areaServed": {
+		   "@type": "Place",
+		   "name": "Monroe, LA, and surrounding areas",
+		},
+		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
+	 };
 	return (
 		<>
 			<Helmet>
@@ -40,13 +62,17 @@ function Carpet() {
 					name='keywords'
 					content='carpet cleaning, carpet repairs, mattress cleaning, area rug cleaning, pet treatments, carpet and fabric protectors, deodorization'
 				/>
+               {JSON.stringify(schemaData)}
+
 			</Helmet>
 			<SocialHeader />
 			<Header />
 			<PageTitle pageName={pageName} />
 			<div className='servicePageContent'>
 				<div className='servicePageText'>
+					
 					<h2>Residential and Commercial Carpet & Rugs</h2>
+
 					<p>
 						No matter how clean you keep your home, carpets typically harbor
 						significant quantities of dust mites, pollen, and other
@@ -65,10 +91,26 @@ function Carpet() {
 						Mattress Cleaning, Area Rug Cleaning Pet Treatments, Carpet and
 						Fabric Protectors, Deodorization.
 					</p>
+					<h2>Rug Cleaning Process </h2>
+					<video
+						className='serviceVideo'
+						controls
+						src={rug_video}
+						style={{ 
+							width: "100%",
+							maxWidth: "600px",
+							borderRadius: "10px",
+							boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+						 }}
+						
+						// poster={image_1}
+					/>
 				</div>
 				<Sidebar />
 			</div>
-			<Contact />
+			<Contact
+				images={images}
+			/>
 			<Banner />
 			<Footer />
 		</>
