@@ -8,12 +8,26 @@ import Banner from "../components/EstimateBanner";
 import { useNavigate } from "react-router-dom";
 import {Helmet} from 'react-helmet-async'
 import Sidebar from "../components/Nav/Sidebar";
-import Truck from "../assets/images/waterdamage.webp";
+import image_1 from "../assets/images/services/water_fire/IMG_2571.webp";
+import image_2 from "../assets/images/services/water_fire/IMG_2578.webp";
+import image_3 from "../assets/images/services/water_fire/IMG_9356.webp";
+import image_4 from "../assets/images/services/water_fire/IMG_9424.webp";
+import image_5 from "../assets/images/services/water_fire/IMG_9497.webp";
+import image_6 from "../assets/images/services/water_fire/IMG_9507.webp";
+import image_7 from "../assets/images/services/water_fire/IMG_9521.webp";
+import image_8 from "../assets/images/services/water_fire/IMG_9524.webp";
 function WaterAndFire() {
 	const navigate = useNavigate();
 	const pageName = "water";
 	const images: string[] = [
-		Truck
+		image_1,
+		image_2,
+		image_3,
+		image_4,
+		image_5,
+		image_6,
+		image_7,
+		image_8,
 	];
 
 	useEffect(() => {
