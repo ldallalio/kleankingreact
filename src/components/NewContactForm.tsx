@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useForm, Controller, FieldError } from "react-hook-form";
 import {
-	TextField,
-	PrimaryButton,
-	Dropdown,
 	IDropdownOption,
 	MessageBar,
 	MessageBarType,
@@ -121,124 +118,8 @@ export const NewContactForm: React.FC<Props> = () => {
 				day.
 			</p>
 
-			<form
-				onSubmit={handleSubmit(onSubmit)}
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					gap: "10px",
-					width: "90%",
-					// maxWidth: "400px",
-				}}
-			>
-				<Controller
-					name="name"
-					control={control}
-					rules={{ required: "Name is required" }}
-					render={({ field }) => (
-						<TextField
-							{...field}
-							label="Name"
-							required
-							styles={{
-								fieldGroup:{ height:'40px'}
-							}}
-							errorMessage={
-								errors.name ? (errors.name as FieldError).message : undefined
-							}
-						/>
-					)}
-				/>
-				<Controller
-					name="email"
-					control={control}
-					rules={{
-						required: "Email is required",
-						pattern: {
-							value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-							message: "Invalid email address",
-						},
-					}}
-					render={({ field }) => (
-						<TextField
-							{...field}
-							label="Email"
-							required
-							styles={{
-								fieldGroup:{ height:'40px'}
-							}}
-							errorMessage={
-								errors.email ? (errors.email as FieldError).message : undefined
-							}
-						/>
-					)}
-				/>
-				{/* Add Phone Number */}
-				<Controller
-					name="phone"
-					control={control}
-					rules={{
-						required: "Phone is required",
-						pattern: {
-							value: /^[0-9]{10}$/,
-							message: "Invalid phone number",
-						},
-					}}
-					render={({ field }) => (
-						<TextField
-							{...field}
-							label="Phone"
-							required
-							styles={{
-								fieldGroup:{ height:'40px'}
-							}}
-							errorMessage={
-								errors.phone ? (errors.phone as FieldError).message : undefined
-							}
-						/>
-					)}
-				/>
 
-				<Controller
-					name="service"
-					control={control}
-					rules={{ required: "Service is required" }}
-					render={({ field }) => (
-						<Dropdown
-							{...field}
-							label="Service"
-							options={services}
-							required
-							onChange={(_, option) => field.onChange(option ? option.key : "")}
-							errorMessage={
-								errors.service
-									? (errors.service as FieldError).message
-									: undefined
-							}
-						/>
-					)}
-				/>
-				<Controller
-					name="message"
-					control={control}
-					rules={{ required: "Message is required" }}
-					render={({ field }) => (
-						<TextField
-							{...field}
-							label="Message"
-							required
-							multiline
-							rows={4}
-							errorMessage={
-								errors.message
-									? (errors.message as FieldError).message
-									: undefined
-							}
-						/>
-					)}
-				/>
-				<PrimaryButton type="submit" text="Submit" disabled={isSubmitting} />
-			</form>
+			<iframe  width='550px' height='760px' style={{ border: 'none', overflow: 'hidden' }} src='https://www.servicemonster.net/forms/Form/bGVJRzlzbkxzSkhCNkhnRmdFJTJmU0dJTjdZMGVuMVhHY3NXaUc1cHowczFFJTNk?embed=true'></iframe>
 			{isSuccess && (
 				<MessageBar messageBarType={MessageBarType.success}>
 					Form submitted successfully

@@ -13,6 +13,7 @@ import Tile from "./pages/Tile";
 import Upholstery from "./pages/Upholstery";
 import LandingPage from "./pages/LandingPage";
 import { initializeIcons } from "@fluentui/react";
+import TextingPrivacy from "./pages/TextingPrivacy";
 
 initializeIcons();
 export const GlobalStateContext = React.createContext<any>(null);
@@ -32,7 +33,8 @@ function App() {
 				<Route path='/water' element={<Water />} />
 				<Route path='/tile' element={<Tile />} />
 				<Route path='/upholstery' element={<Upholstery />} />
-				<Route path='/landing' element={<LandingPage />} /> 
+				<Route path='/landing' element={<LandingPage />} />
+				<Route path='/texting-privacy' element={<TextingPrivacy />} />
 			</Routes>
 		</BrowserRouter>
 		</GlobalStateContext.Provider>

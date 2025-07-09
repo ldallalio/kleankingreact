@@ -100,7 +100,7 @@ function Footer() {
 						<a className="footerLink" href="/#contactus">
 							Contact
 						</a>
-						<a className="footerLink" href="https://www.kleankingcarpet.com/privacy/Texting%20Privacy%20Policy%20Additions.docx">
+						<a className="footerLink" href="/texting-privacy">
 							Texting Privacy Policy
 						</a>
 						<a className="footerLink" href="https://www.kleankingcarpet.com/privacy/Texting_AUP.docx">
