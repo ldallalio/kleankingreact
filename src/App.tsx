@@ -14,6 +14,7 @@ import Upholstery from "./pages/Upholstery";
 import LandingPage from "./pages/LandingPage";
 import { initializeIcons } from "@fluentui/react";
 import TextingPrivacy from "./pages/TextingPrivacy";
+import TextingAUP from "./pages/TextingAUP";
 
 initializeIcons();
 export const GlobalStateContext = React.createContext<any>(null);
@@ -35,6 +36,7 @@ function App() {
 				<Route path='/upholstery' element={<Upholstery />} />
 				<Route path='/landing' element={<LandingPage />} />
 				<Route path='/texting-privacy' element={<TextingPrivacy />} />
+				<Route path='/texting-aup' element={<TextingAUP />} />
 			</Routes>
 		</BrowserRouter>
 		</GlobalStateContext.Provider>

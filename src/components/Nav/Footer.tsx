@@ -103,7 +103,7 @@ function Footer() {
 						<a className="footerLink" href="/texting-privacy">
 							Texting Privacy Policy
 						</a>
-						<a className="footerLink" href="https://www.kleankingcarpet.com/privacy/Texting_AUP.docx">
+						<a className="footerLink" href="/texting-aup">
 							Texting Agreement
 						</a>
 					</div>
