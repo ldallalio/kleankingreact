@@ -1,67 +1,64 @@
-import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
 import Hero from "../components/Home/HeroSection";
-import PrevWork from "../components/PreviousWork";
 import Estimate from "../components/EstimateBanner";
 import Footer from "../components/Nav/Footer";
-import { useContext, useEffect } from "react";
-import { GlobalStateContext } from "../App";
 import { NewContactForm } from "../components/NewContactForm";
 import GoldBar from "../components/GoldBar";
 import GoogleReviews from "../components/Reviews/GoogleReviews";
 import OurEmployees from "../components/Home/OurEmployees";
 import ServicesButtons from "../components/Home/ServicesButtons";
 import AboutVideo from "../components/Home/AboutVideo";
+import Seo from "../components/Seo";
+import {
+	SERVICE_AREAS,
+	SERVICE_LINKS,
+	buildLocalBusinessSchema,
+	buildWebsiteSchema,
+} from "../common/site";
 
 function Home() {
-	const global = useContext(GlobalStateContext);
-	useEffect(() => {
-		global.pageType = "Home";
-	});
-	const schemaData = {
-		"@context": "https://schema.org",
-		"@type": "Service",
-		"serviceType": "Residental and Commercial Cleaning",
-		"provider": {
-		   "@type": "Organization",
-		   "name": "Klean King Carpet",
-		   "url": "https://kleankingcarpet.com",
-		   "logo": "https://kleankingcarpet.com/logo.png",
-		},
-		"areaServed": {
-		   "@type": "Place",
-		   "name": "Monroe, LA, and surrounding areas",
-		},
-		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
-	 };
-
+	const title =
+		"Klean King Carpet & Air Ducts | Carpet Cleaning and Restoration in Monroe, LA";
+	const description =
+		"Klean King Carpet & Air Ducts provides carpet cleaning, air duct cleaning, dryer vent cleaning, mold remediation, and water or fire restoration for Monroe, West Monroe, Ruston, and surrounding Louisiana communities.";
 
 	return (
 		<>
-			<Helmet>
-				<title>Klean King - Home</title>
-				<meta
-					name="description"
-					content="Welcome to Klean King - Your trusted cleaning service provider. We offer a wide range of cleaning services for residential and commercial properties. Contact us today for a free estimate!"
-				/>
-				<meta
-					name="keywords"
-					content="cleaning service, residential cleaning, commercial cleaning, professional cleaners"
-				/>
-				<script type="application/ld+json">
-               {JSON.stringify(schemaData)}
-            </script>
-			</Helmet>
+			<Seo
+				title={title}
+				description={description}
+				path="/"
+				jsonLd={[buildWebsiteSchema(), buildLocalBusinessSchema()]}
+			/>
 			<SocialHeader />
 			<Header />
 			<Hero />
 			<GoldBar />
 			<ServicesButtons />
 			<AboutVideo />
+			<section className="seoSection" aria-label="Local cleaning and restoration overview">
+				<h2>Local cleaning and restoration services in Monroe, Louisiana</h2>
+				<p>
+					Klean King helps homeowners, property managers, and commercial clients
+					with everyday cleaning needs and urgent cleanup work across{" "}
+					{SERVICE_AREAS.join(", ")}. Whether you need air duct cleaning,
+					carpet cleaning, tile and grout cleaning, dryer vent service, or
+					emergency water and fire restoration, our team focuses on quick
+					response times, clear estimates, and practical results.
+				</p>
+				<div className="relatedServicesGrid">
+					{SERVICE_LINKS.slice(0, 6).map((service) => (
+						<Link key={service.path} className="relatedServiceCard" to={service.path}>
+							<strong>{service.label}</strong>
+							<span>{service.description}</span>
+						</Link>
+					))}
+				</div>
+			</section>
 			<GoogleReviews />
 			<OurEmployees />
-			{/* <PrevWork /> */}
 			<div
 				style={{
 					backgroundColor: "white",

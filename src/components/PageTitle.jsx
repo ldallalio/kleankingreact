@@ -1,23 +1,27 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
-function PageTitle({ pageName }) {
-  const name = pageName;
-  
-  useEffect(()=>{  
-const stylesArr = document.querySelector('.pageTitle').classList;
-  if (stylesArr.length > 1) {
-    
-    document.querySelector('.pageTitle').classList.remove(stylesArr[1])
-  }
-    document.querySelector('.pageTitle').classList.add(name);
-  }, [name])
+function PageTitle({ pageName, title, subtitle }) {
+	useEffect(() => {
+		const pageTitle = document.querySelector(".pageTitle");
+		if (!pageTitle) {
+			return;
+		}
 
-  
-  return (
-    <div className="pageTitle tile">
-      {/* <h1>{name}</h1> */}
-    </div>
-  );
+		const stylesArr = pageTitle.classList;
+		if (stylesArr.length > 1) {
+			pageTitle.classList.remove(stylesArr[1]);
+		}
+		pageTitle.classList.add(pageName);
+	}, [pageName]);
+
+	return (
+		<section className="pageTitle tile">
+			<div className="pageTitleOverlay">
+				<h1>{title}</h1>
+				{subtitle ? <p>{subtitle}</p> : null}
+			</div>
+		</section>
+	);
 }
 
 export default PageTitle;

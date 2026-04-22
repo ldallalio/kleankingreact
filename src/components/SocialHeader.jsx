@@ -60,7 +60,12 @@ function SocialHeader() {
 			</div>
 			<div className='socialIcons'>
 				<div className='socialIcon'>
-					<a href='https://www.facebook.com/kleankingcarpet/' target='_'>
+					<a
+						href='https://www.facebook.com/kleankingcarpet/'
+						target='_blank'
+						rel='noreferrer'
+						aria-label='Klean King on Facebook'
+					>
 						<svg
 							width='10'
 							height='16'

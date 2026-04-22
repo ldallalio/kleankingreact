@@ -1,198 +1,57 @@
-import React, { useEffect } from "react";
-import Header from "../components/Nav/Header";
-import SocialHeader from "../components/SocialHeader";
-import PageTitle from "../components/PageTitle";
-import Contact from "../components/Contact";
-import Footer from "../components/Nav/Footer";
-import Banner from "../components/EstimateBanner";
-import { useNavigate } from "react-router-dom";
-import {Helmet} from 'react-helmet-async'
-import Sidebar from "../components/Nav/Sidebar";
-import image_1 from "../assets/images/services/water_fire/IMG_2571.webp";
-import image_2 from "../assets/images/services/water_fire/IMG_2578.webp";
-import image_3 from "../assets/images/services/water_fire/IMG_9356.webp";
-import image_4 from "../assets/images/services/water_fire/IMG_9424.webp";
-import image_5 from "../assets/images/services/water_fire/IMG_9497.webp";
-import image_6 from "../assets/images/services/water_fire/IMG_9507.webp";
-import image_7 from "../assets/images/services/water_fire/IMG_9521.webp";
-import image_8 from "../assets/images/services/water_fire/IMG_9524.webp";
+import React from "react";
+import RelatedServices from "../components/RelatedServices";
+import ServicePageShell from "../components/ServicePageShell";
+import image1 from "../assets/images/services/water_fire/IMG_2571.webp";
+import image2 from "../assets/images/services/water_fire/IMG_2578.webp";
+import image3 from "../assets/images/services/water_fire/IMG_9356.webp";
+import image4 from "../assets/images/services/water_fire/IMG_9424.webp";
+import image5 from "../assets/images/services/water_fire/IMG_9497.webp";
+import image6 from "../assets/images/services/water_fire/IMG_9507.webp";
+import image7 from "../assets/images/services/water_fire/IMG_9521.webp";
+import image8 from "../assets/images/services/water_fire/IMG_9524.webp";
+
 function WaterAndFire() {
-	const navigate = useNavigate();
-	const pageName = "water";
-	const images: string[] = [
-		image_1,
-		image_2,
-		image_3,
-		image_4,
-		image_5,
-		image_6,
-		image_7,
-		image_8,
-	];
+	const description =
+		"Water damage restoration and fire cleanup in Monroe, LA with emergency water removal, drying, odor cleanup, contents handling, and restoration support.";
 
-	useEffect(() => {
-		setActive();
-	}, []);
-
-	const setActive = () => {
-		//@ts-ignore
-		//Remove active from Home
-		document.querySelector("li").classList.remove("active");
-		//Add active to Services
-		document.getElementsByTagName("li")[2].classList.add("active");
-	};
-	const schemaData = {
-		"@context": "https://schema.org",
-		"@type": "Service",
-		"serviceType": "Water and Fire Restoration - Residental and Commercial Cleaning",
-		"provider": {
-		   "@type": "Organization",
-		   "name": "Klean King Carpet",
-		   "url": "https://kleankingcarpet.com/water",
-		   "logo": "https://kleankingcarpet.com/logo.png",
-		},
-		"areaServed": {
-		   "@type": "Place",
-		   "name": "Monroe, LA, and surrounding areas",
-		},
-		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
-	 };
 	return (
-		<>
-			<Helmet>
-				<title>Water and Fire Restoration</title>
-				{JSON.stringify(schemaData)}
-			</Helmet>
-			<SocialHeader />
-			<Header />
-			<PageTitle pageName={pageName} />
-			<div className='servicePageContent'>
-				<div className='servicePageText'>
-					<h2>Klean King Emergency Services</h2>
-					<h3> 24/7 Emergency Water Removal</h3>
-
-					<p>
-						We are here to help with all of your water damage restoration needs.
-						What we do is minimize the damage, water removal must happen
-						quickly. When a flooding emergency occurs, you need expert
-						help&mdash;and you need it fast. Klean King&rsquo;s trained
-						technicians are on call 24/7. They arrive on the scene with
-						powerful, state-of-the-art equipment that extracts the water from
-						your home.
-					</p>
-
-					<p>
-						Our certified restoration experts are trained to deal with water
-						removal emergencies, and they will contact you within 15 minutes of
-						your initial call. They will also advise you how to minimize the
-						water damage until our crew arrives.
-					</p>
-
-					<p>
-						Klean King uses a Thermal Imager to monitor and diagnose the
-						condition of residential and commercial buildings. It quickly
-						identifies areas affected by water that can&rsquo;t be seen by the
-						naked eye.
-					</p>
-
-					<p>It can be used on nearly any building materials including:</p>
-
-					<p>Drywall</p>
-
-					<p>Floor Coverings</p>
-
-					<p>Ceilings</p>
-
-					<p>Behind walls</p>
-
-					<p>And Much More&#8230;</p>
-
-					<p>
-						Klean King has any equipment needed to take care of your emergency
-						rather it be small or the entire home or building. Our staff will
-						advise you about the steps needed. What is water damage?
-					</p>
-
-					<p>
-						The scope of clean up in water damage restoration procedures may be
-						much more than what is visible. Water pipes that burst or begin to
-						leak in your house may not get noticed for a long period of time.
-					</p>
-
-					<p>
-						Water damage restoration may be too costly for individuals to repair
-						by themselves. Flood damage repair companies are specialists in the
-						cleanup and repair of damage sustained to your home or office
-						building from any type of water damage.Water damage restoration
-						procedures require immediate moisture removal and control to prevent
-						or stop the growth of mold and mildew, which causes biological
-						contamination.
-					</p>
-
-					<p>
-						Dehumidification is essential in the cleaning process to remove
-						evaporated moisture from the air and prevent secondary damage.
-					</p>
-
-					<p>
-						Regardless of the extent of water damage, water contamination
-						spreads quickly. Serious health hazards can occur if the structure
-						is not dried out immediately. If carpeting can be salvaged, we
-						specialize in water extraction and expert cleaning and sanitation of
-						all flooring in your home or office building.
-					</p>
-					<h3> Fire Restoration</h3>
-
-					<p>
-						Klean King has highly qualified technicians to help eliminate
-						contaminants, odors, soot and smoke particles left in the aftermath
-						of fire on structural surfaces.
-					</p>
-
-					<p>
-						We also offer board-up of doors, windows or structural openings
-						following a fire.
-					</p>
-
-					<p>Contents</p>
-
-					<p>
-						In many ways, contents handling is the most personal part of our
-						job. That&rsquo;s because we understand that your belongings are
-						what makes your house a home.
-					</p>
-
-					<p>Our Professional Staff can handle the following for you.</p>
-
-					<p> Pack out &amp; Inventory</p>
-
-					<p> Contents Cleaning</p>
-
-					<p> Store</p>
-
-					<p> Deliver &amp; Unpack</p>
-
-					<p> Floors, Walls, Ceilings</p>
-
-					<p> Furniture, Appliance Cleaning/Repair</p>
-
-					<p> Smoke, Soot, and Odor Removal</p>
-
-					<p>We also offer tear outs of cabinets, floors, etc.</p>
-
-					<p>
-						We work with your insurance/adjusters as well. We process all claims
-						through xactimate and on a timely basis.
-					</p>
-				</div>
-				<Sidebar />
-			</div>
-			<Contact 
-				images={images}
-			/>
-			<Banner />
-			<Footer />
-		</>
+		<ServicePageShell
+			title="Water and Fire Restoration in Monroe, LA | Klean King Carpet & Air Ducts"
+			description={description}
+			path="/water"
+			pageName="water"
+			heroTitle="Water and Fire Restoration"
+			heroSubtitle="Emergency cleanup, drying, and restoration support when damage needs fast action."
+			images={[image1, image2, image3, image4, image5, image6, image7, image8]}
+			imageAltPrefix="Water and fire restoration"
+		>
+			<h2>24/7 emergency water removal</h2>
+			<p>
+				When flooding or a leak hits, fast water removal matters. Klean King
+				provides emergency response for water damage restoration in Monroe and
+				surrounding communities, using extraction and drying equipment to limit
+				secondary damage and help move the cleanup process forward quickly.
+			</p>
+			<p>
+				Our team can help with visible water removal, moisture detection,
+				dehumidification, drying plans, and practical guidance on the next steps
+				for flooring, walls, and other affected materials.
+			</p>
+			<h2>Fire cleanup and restoration support</h2>
+			<p>
+				After a fire, cleanup often includes soot and smoke residue removal,
+				odor treatment, structural cleaning, and contents handling. Klean King
+				also helps with board-up work, pack-out and inventory support, and
+				coordination around insurance documentation when needed.
+			</p>
+			<p>
+				We serve Monroe, West Monroe, Ruston, Farmerville, Bastrop, Rayville,
+				Columbia, Winnsboro, and Sterlington with emergency-oriented response
+				and clear communication during stressful situations.
+			</p>
+			<RelatedServices currentPath="/water" serviceLabel="water and fire restoration" />
+		</ServicePageShell>
 	);
 }
+
 export default WaterAndFire;

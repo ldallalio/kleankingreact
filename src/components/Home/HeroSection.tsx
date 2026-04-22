@@ -1,54 +1,74 @@
-import React from 'react';
-// import videoSrc from '../../assets/videoforKK.mp4';
+import React, { useState } from 'react';
+import heroFallback from '../../assets/images/UpdatedKleanKingTruck.webp';
+import heroVideo from '../../assets/videos/videoforKK-02.mp4';
 
 function HeroSection() {
-    return (
-        <section className="heroContainer" style={{ position: 'relative', overflow: 'hidden' }}>
-            <video
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    zIndex: -1,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                }}
-				
-                autoPlay
-                loop
-                muted
-                aria-controls="true"
-                className="heroVideo"
-				
-            >
-                <source 
-				src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/videoforKK-02.mp4'} type="video/mp4" />
-            </video>
-            <div className="heroContent" style={{ position: 'relative', zIndex: 1 }}>
-                {/* Two Large Buttons in a column - Emergency services - Request Consultation */}
-                <div className="heroButtons">
-                    <button
-                        className="heroButton"
-                        id="firstHeroButton"
-                        onClick={() => {
-                            window.location.href = '/#contactus';
-                        }}
-                    >
-                        SCHEDULE A CONSULTATION
-                    </button>
-                    <button
-                        className="heroButton"
-                        onClick={() => {
-                            window.location.href = '/#contactus';
-                        }}
-                    >
-                        REQUEST EMERGENCY SERVICES
-                    </button>
-                </div>
-            </div>
-        </section>
-    );
+	const [videoFailed, setVideoFailed] = useState(false);
+
+	return (
+		<section
+			className="heroContainer"
+			style={{
+				position: 'relative',
+				overflow: 'hidden',
+				backgroundImage: `url(${heroFallback})`,
+			}}
+		>
+			{!videoFailed && (
+				<video
+					style={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						zIndex: 0,
+						width: '100%',
+						height: '100%',
+						objectFit: 'cover',
+					}}
+					autoPlay
+					loop
+					muted
+					playsInline
+					poster={heroFallback}
+					onError={() => setVideoFailed(true)}
+					className="heroVideo"
+				>
+					<source
+						src={heroVideo}
+						type="video/mp4"
+					/>
+				</video>
+			)}
+			<div className="heroContent" style={{ position: 'relative', zIndex: 1 }}>
+				<div className="heroText">
+					<p className="heroEyebrow">Serving Monroe, Louisiana</p>
+					<h1>
+						<span className="heroHeadlineLine">Carpet and Air Duct</span>
+						<span className="heroHeadlineLine">Cleaning in Monroe</span>
+					</h1>
+					<p className="heroSubtitle">
+						Restoration, dryer vent cleaning, mold cleanup, and floor care for
+						Monroe homes and businesses.
+					</p>
+					<div className="heroButtons">
+						<a
+							className="heroButton"
+							href="#contactus"
+							id="firstHeroButton"
+						>
+							Schedule a consultation
+						</a>
+						<a
+							className="heroButton"
+							href="#contactus"
+						>
+							Request emergency service
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }
 
 export default HeroSection;

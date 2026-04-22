@@ -1,111 +1,81 @@
-import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import React, { useEffect, useMemo, useState } from "react";
 import Header from "../components/Nav/Header";
 import SocialHeader from "../components/SocialHeader";
-import { pageTypes, serviceDescriptions, serviceTitles } from "../common/interfaces";
+import { serviceDescriptions, serviceTitles } from "../common/interfaces";
 import { NewContactForm } from "../components/NewContactForm";
-import UpdatedTruckImg from '../assets/images/updatedTruckPhoto.png';
+import UpdatedTruckImg from "../assets/images/updatedTruckPhoto.png";
 import Footer from "../components/Nav/Footer";
+import Seo from "../components/Seo";
+import { SERVICE_LINKS } from "../common/site";
 
-type Props = {};
+const landingConfig = {
+	air: {
+		title: serviceTitles.AIR,
+		description: serviceDescriptions.clearning,
+		path: "/air",
+	},
+	carpet: {
+		title: serviceTitles.CARPET,
+		description: serviceDescriptions.clearning,
+		path: "/carpet",
+	},
+	tile: {
+		title: serviceTitles.TILE,
+		description: serviceDescriptions.clearning,
+		path: "/tile",
+	},
+	upholstery: {
+		title: serviceTitles.UPHOLSTERY,
+		description: serviceDescriptions.clearning,
+		path: "/upholstery",
+	},
+	wood: {
+		title: serviceTitles.HARDWOOD,
+		description: serviceDescriptions.clearning,
+		path: "/hardwood",
+	},
+	restoration: {
+		title: serviceTitles.WATER,
+		description: serviceDescriptions.restoration,
+		path: "/water",
+	},
+} as const;
 
-const LandingPage: React.FC<Props> = () => {
-	const [pageType, setPageType] = useState<pageTypes>(pageTypes.AIR);
+function LandingPage() {
 	const [serviceTitle, setServiceTitle] = useState<serviceTitles>(serviceTitles.AIR);
 	const [serviceDescription, setServiceDescription] = useState<string>("");
-	const [landingImage, setLandingImage] = useState<string>(UpdatedTruckImg);
-	const [url , setUrl] = useState<any>();
-
-	const setActive = () => {
-		// Remove active from Home
-		document.querySelector("li")?.classList.remove("active");
-		// Add active to Services
-		document.getElementsByTagName("li")[2]?.classList.add("active");
-	};
+	const [primaryPath, setPrimaryPath] = useState<string>("/air");
 
 	useEffect(() => {
-		setActive();
-		// Get title from URL and set the page type
 		const currentUrl = new URL(window.location.href);
-		setUrl(currentUrl)
-		const title = currentUrl.searchParams.get("title");
+		const title = (currentUrl.searchParams.get("title") || "air") as keyof typeof landingConfig;
+		const selected = landingConfig[title] || landingConfig.air;
 
-		switch (title) {
-			case "carpet":
-				setPageType(pageTypes.CARPET);
-				setServiceTitle(serviceTitles.CARPET);
-				setServiceDescription(serviceDescriptions.clearning);
-				break;
-			case "tile":
-				setPageType(pageTypes.TILE);
-				setServiceTitle(serviceTitles.TILE);
-				setServiceDescription(serviceDescriptions.clearning);
-
-				break;
-			case "upholstery":
-				setPageType(pageTypes.UPHOLSTERY);
-				setServiceTitle(serviceTitles.UPHOLSTERY);
-				setServiceDescription(serviceDescriptions.clearning);
-
-				break;
-			case "wood":
-				setPageType(pageTypes.HARDWOOD);
-				setServiceTitle(serviceTitles.HARDWOOD);
-				setServiceDescription(serviceDescriptions.clearning);
-
-				break;
-			case "air":
-				setPageType(pageTypes.AIR);
-				setServiceTitle(serviceTitles.AIR);
-				setServiceDescription(serviceDescriptions.clearning);
-				break;
-			case "restoration":
-				setPageType(pageTypes.WATER);
-				setServiceTitle(serviceTitles.WATER);
-				setServiceDescription(serviceDescriptions.restoration);
-				break;
-			default:
-				setPageType(pageTypes.AIR);
-				setServiceTitle(serviceTitles.AIR);
-				setServiceDescription(serviceDescriptions.clearning);
-				break;
-		}
-
+		setServiceTitle(selected.title);
+		setServiceDescription(selected.description);
+		setPrimaryPath(selected.path);
 	}, []);
-	
-	const schemaData = {
-		"@context": "https://schema.org",
-		"@type": "Service",
-		"serviceType": "Klean King - Residental and Commercial Cleaning",
-		"provider": {
-		   "@type": "Organization",
-		   "name": "Klean King Carpet",
-		   "url": "https://kleankingcarpet.com",
-		   "logo": "https://kleankingcarpet.com/logo.png",
-		},
-		"areaServed": {
-		   "@type": "Place",
-		   "name": "Monroe, LA, and surrounding areas",
-		},
-		"description": "Local Professional Cleaning Services for Monroe LA and surronding areas."
-	 };
+
+	const primaryService = useMemo(
+		() => SERVICE_LINKS.find((service) => service.path === primaryPath) || SERVICE_LINKS[0],
+		[primaryPath],
+	);
+
 	return (
 		<>
-			<Helmet>
-				<title>Klean King - {serviceTitle}</title>
-				<meta name="description" content={`Klean King offers exceptional ${serviceTitle} services. Contact us for a free estimate and experience top-notch cleaning services.`} />
-				<meta name="keywords" content={`Klean King, ${serviceTitle} services, cleaning services`} />
-				<meta name="author" content="Klean King" />
-				{JSON.stringify(schemaData)}
-
-			</Helmet>
+			<Seo
+				title={`${serviceTitle} ${serviceDescription} | Klean King Carpet & Air Ducts`}
+				description={`Request a fast estimate for ${serviceTitle.toLowerCase()} ${serviceDescription} from Klean King Carpet & Air Ducts in Monroe, Louisiana and surrounding areas.`}
+				path={primaryPath}
+				noindex
+			/>
 			<SocialHeader />
 			<Header />
 			<div className="landingPage">
 				<section
 					className="hero-section"
 					style={{
-						backgroundImage: `url(${landingImage})`,
+						backgroundImage: `url(${UpdatedTruckImg})`,
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						backgroundRepeat: "no-repeat",
@@ -120,52 +90,41 @@ const LandingPage: React.FC<Props> = () => {
 							borderRadius: "10px",
 						}}
 					>
-
-					<h1
-						style={{
-							color: "white",
-							fontSize: "2.5rem",
-							margin: 0,
-							padding: "20px",
-						}}
-					>
-						{serviceTitle} {serviceDescription && ` ${serviceDescription}`}
-
-					</h1>
+						<h1
+							style={{
+								color: "white",
+								fontSize: "2.5rem",
+								margin: 0,
+								padding: "20px",
+							}}
+						>
+							{serviceTitle} {serviceDescription}
+						</h1>
 					</div>
 				</section>
 				<div
-				style={{
-					backgroundColor: "white",
-					padding: "20px 0",
-					// textAlign: "center",
-					display: "flex",
-					justifyContent: "center",
-				}}
-			>
-			<NewContactForm />
-
-			</div>
-				<section
-					className="features-section"
 					style={{
+						backgroundColor: "white",
+						padding: "20px 0",
 						display: "flex",
-						flexDirection: "column",
-						gap: "20px",
-						padding: "20px",
-						borderRadius: "10px",
-						width: "100%",
-						textAlign: "center",
-						alignItems: "center",
 						justifyContent: "center",
 					}}
 				>
-					{/* Additional content can be added here */}
+					<NewContactForm />
+				</div>
+				<section className="seoSection">
+					<h2>Fast estimate for {primaryService.label.toLowerCase()}</h2>
+					<p>
+						This landing page is designed for customers who already know the
+						service they need and want to request a quote quickly. If you want
+						more detail before submitting the form, visit the full{" "}
+						<a href={primaryPath}>{primaryService.label}</a> service page.
+					</p>
 				</section>
 				<Footer />
 			</div>
 		</>
 	);
-};
+}
 
 export default LandingPage;

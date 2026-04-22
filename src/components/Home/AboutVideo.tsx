@@ -1,6 +1,5 @@
 import * as React from "react";
-import aboutVideoBackground from "../../assets/images/VideoBackground.svg";
-import cover from "../../assets/images/YoutubeCover.webp"
+import aboutImage from "../../assets/images/KK.jpg";
 
 type Props = {};
 
@@ -8,24 +7,16 @@ const AboutVideo = (props: Props) => {
 	return (
 		<section
 			id="about"
-			aria-label="About Video"
-			style={{
-				backgroundImage: `url(${aboutVideoBackground})`,
-				backgroundSize: "contain",	
-				backgroundPosition: "center",
-				backgroundRepeat: "no-repeat",
-			}}
+			aria-label="About Klean King"
 			className="aboutVideoSection"
 		>
-			<video
-				autoPlay={false}
-				aria-controls="true"
+			<img
+				alt="Klean King team and branding"
 				className="aboutVideo"
-				controls={true}
-				poster={cover}
-			>
-				<source src={'https://kleankingcarpet.dallalioweb.dev/wp-content/uploads/2024/08/AboutVideoLoriWithAudio.mp4'} type="video/mp4" />
-			</video>
+				decoding="async"
+				loading="lazy"
+				src={aboutImage}
+			/>
 		</section>
 	);
 };

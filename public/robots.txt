@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /landing
+
+Sitemap: https://kleankingcarpet.com/sitemap.xml

@@ -2,30 +2,21 @@ import React, { useEffect } from 'react'
 import googleReivews from "../../util/GoogleReviews.json"
 import { IReview } from '../../common/interfaces'
 import { Icon } from '@fluentui/react/lib/Icon'
-
-
-
 const GoogleReviews = () => {
-    //get reviews from a json file and display them
     const rev = googleReivews as IReview[]
     const numberOfReviews = rev.length;
     const [fiveRandomReviews, setFiveRandomReviews] = React.useState<IReview[]>([])
 
-    const getFiveRandomReviews = () => {
+    useEffect(() => {
         const randomReviews = []
         for (let i = 0; i < 5; i++) {
             const randomIndex = Math.floor(Math.random() * numberOfReviews)
             randomReviews.push(rev[randomIndex])
         }
         setFiveRandomReviews(randomReviews)
-        return randomReviews
-    }
-
-    useEffect(() => {
-        getFiveRandomReviews()
-    }, [])
+    }, [numberOfReviews, rev])
     return (
-        <div
+        <section
             style={{
                 display: "flex",
                 flexDirection: "column",
@@ -35,13 +26,15 @@ const GoogleReviews = () => {
                 padding: "1rem",
             }}
         >
-            <h1
+            <h2
                 style={{
                     color: "gold",
                     textAlign: "center",
                     fontSize: "3rem",
                 }}
-            >Google Reviews</h1>
+            >
+                Google Reviews
+            </h2>
             <div
                 style={{
                     padding: "1rem",
@@ -121,7 +114,7 @@ const GoogleReviews = () => {
                     )
                 })}
             </div>
-        </div>
+        </section>
     )
 }
 

@@ -8,7 +8,14 @@ import emp6 from "../../assets/images/employees/justin.webp";
 type Props = {};
 
 const OurEmployees = (props: Props) => {
-	const images = [emp1, emp2, emp3, emp4, emp5, emp6];
+	const images = [
+		{ src: emp1, alt: "Klean King team member" },
+		{ src: emp2, alt: "Klean King cleaning technician" },
+		{ src: emp3, alt: "Klean King crew member" },
+		{ src: emp4, alt: "Tanner from the Klean King team" },
+		{ src: emp5, alt: "Robert from the Klean King team" },
+		{ src: emp6, alt: "Justin from the Klean King team" },
+	];
 	return (
 		<section aria-label="Our Employees">
 			<div
@@ -35,8 +42,8 @@ const OurEmployees = (props: Props) => {
 					{images.map((img, i) => (
 						<img
 							key={i}
-							src={img}
-							alt={`Employee ${i + 1}`}
+							src={img.src}
+							alt={img.alt}
 							style={{
 								width: "100%",
 								height: "auto",

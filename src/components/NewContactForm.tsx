@@ -1,26 +1,12 @@
 import React, { useState } from "react";
-import { useForm, Controller, FieldError } from "react-hook-form";
-import {
-	IDropdownOption,
-	MessageBar,
-	MessageBarType,
-} from "@fluentui/react";
-import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
+import { MessageBar, MessageBarType } from "@fluentui/react";
 import { serviceTitles } from "../common/interfaces";
 
-type Props = {};
+const services = Object.values(serviceTitles);
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/kleankingcarpet@att.net";
 
-const services: IDropdownOption[] = [
-	{ key: serviceTitles.AIR, text: serviceTitles.AIR },
-	{ key: serviceTitles.CARPET, text: serviceTitles.CARPET },
-	{ key: serviceTitles.TILE, text: serviceTitles.TILE },
-	{ key: serviceTitles.UPHOLSTERY, text: serviceTitles.UPHOLSTERY },
-	{ key: serviceTitles.HARDWOOD, text: serviceTitles.HARDWOOD },
-	{ key: serviceTitles.WATER, text: serviceTitles.WATER },
-	{ key: serviceTitles.DRYER, text: serviceTitles.DRYER },
-	{ key: serviceTitles.MOLD, text: serviceTitles.MOLD },
-	{ key: serviceTitles.CRIME, text: serviceTitles.CRIME },
-];
+type Props = {};
 
 interface IFormInput {
 	name: string;
@@ -28,108 +14,211 @@ interface IFormInput {
 	service: string;
 	message: string;
 	phone: string;
+	website?: string;
 }
 
 export const NewContactForm: React.FC<Props> = () => {
 	const {
-		control,
+		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
-	} = useForm<IFormInput>();
+	} = useForm<IFormInput>({
+		defaultValues: {
+			name: "",
+			email: "",
+			phone: "",
+			service: "",
+			message: "",
+			website: "",
+		},
+	});
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
 	const [isError, setIsError] = useState<boolean>(false);
 	const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
 	const onSubmit = async (data: IFormInput) => {
 		setIsSubmitting(true);
+		setIsSuccess(false);
+		setIsError(false);
+
 		try {
-			const response = await fetch("https://formspree.io/f/xeqdoabd", {
+			const formData = new FormData();
+			formData.append("name", data.name);
+			formData.append("email", data.email);
+			formData.append("phone", data.phone);
+			formData.append("service", data.service);
+			formData.append("message", data.message);
+			formData.append("_replyto", data.email);
+			formData.append("_subject", "New Klean King website lead");
+			formData.append("_template", "table");
+			formData.append("_honey", data.website ?? "");
+
+			if (typeof window !== "undefined") {
+				formData.append("_url", window.location.href);
+			}
+
+			const response = await fetch(FORM_ENDPOINT, {
 				method: "POST",
 				headers: {
-					"Content-Type": "application/json",
+					Accept: "application/json",
 				},
-				body: JSON.stringify(data),
+				body: formData,
 			});
-			if (response.ok) {
-				setIsSuccess(true);
-				setIsError(false);
-			} else {
+
+			if (!response.ok) {
 				throw new Error("Form submission failed");
 			}
+
+			reset();
+			setIsSuccess(true);
 		} catch (error) {
 			setIsError(true);
-			setIsSuccess(false);
 		} finally {
 			setIsSubmitting(false);
 		}
 	};
 
 	return (
-		<div
-			id='contactus'
-			className="contactFormContainer"
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				alignSelf: "center",
-				gap: "20px",
-				padding: "20px",
-				borderRadius: "10px",
-				width: "50%%",
-				boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-				// maxWidth: "500px",
-				// minWidth: "300px",
-				// marginTop: '32px'
-			}}
-		>
-			<Helmet>
-				<title>Contact Us - Klean King</title>
-				<meta
-					name="description"
-					content="Contact Klean King for a free estimate on our cleaning services. We offer a wide range of cleaning services for residential and commercial properties."
-				/>
-				<meta
-					name="keywords"
-					content="cleaning services, contact, Klean King, free estimate"
-				/>
-				<meta name="author" content="Klean King" />
-			</Helmet>
-			<h1
-				style={{
-					textAlign: "center",
-					color: "rgb(4, 12, 122)",
-					margin: 0,
-				}}
-			>
-				Contact Us
-			</h1>
-			<p
-				style={{
-					textAlign: "center",
-					color: "rgb(4, 12, 122)",
-					margin: 0,
-					fontSize: "1.2rem",
-					width: "70%",
-				}}
-			>
-				Please fill out the form for a FREE ESTIMATE or to contact us for any
-				questions or concerns. We will get back to you within the next business
-				day.
+		<div id="contactus" className="newContactFormCard">
+			<h2 className="newContactFormTitle">Contact Us</h2>
+			<p className="newContactFormIntro">
+				Please fill out the form for a free estimate or any questions. We will
+				get back to you within the next business day.
 			</p>
+			<form className="newContactForm" onSubmit={handleSubmit(onSubmit)} noValidate>
+				<div className="newContactFormGrid">
+					<div className="newContactField">
+						<label className="newContactLabel" htmlFor="contact-name">
+							Name
+						</label>
+						<input
+							id="contact-name"
+							className="newContactInput"
+							type="text"
+							placeholder="Your name"
+							autoComplete="name"
+							{...register("name", {
+								required: "Name is required.",
+							})}
+						/>
+						{errors.name && (
+							<span className="newContactError">{errors.name.message}</span>
+						)}
+					</div>
 
+					<div className="newContactField">
+						<label className="newContactLabel" htmlFor="contact-email">
+							Email
+						</label>
+						<input
+							id="contact-email"
+							className="newContactInput"
+							type="email"
+							placeholder="you@example.com"
+							autoComplete="email"
+							{...register("email", {
+								required: "Email is required.",
+								pattern: {
+									value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+									message: "Enter a valid email address.",
+								},
+							})}
+						/>
+						{errors.email && (
+							<span className="newContactError">{errors.email.message}</span>
+						)}
+					</div>
 
-			<iframe  width='550px' height='760px' style={{ border: 'none', overflow: 'hidden' }} src='https://www.servicemonster.net/forms/Form/bGVJRzlzbkxzSkhCNkhnRmdFJTJmU0dJTjdZMGVuMVhHY3NXaUc1cHowczFFJTNk?embed=true'></iframe>
-			{isSuccess && (
-				<MessageBar messageBarType={MessageBarType.success}>
-					Form submitted successfully
-				</MessageBar>
-			)}
-			{isError && (
-				<MessageBar messageBarType={MessageBarType.error}>
-					Form submission failed
-				</MessageBar>
-			)}
+					<div className="newContactField">
+						<label className="newContactLabel" htmlFor="contact-phone">
+							Phone
+						</label>
+						<input
+							id="contact-phone"
+							className="newContactInput"
+							type="tel"
+							placeholder="318-555-1234"
+							autoComplete="tel"
+							{...register("phone", {
+								required: "Phone number is required.",
+							})}
+						/>
+						{errors.phone && (
+							<span className="newContactError">{errors.phone.message}</span>
+						)}
+					</div>
+
+					<div className="newContactField">
+						<label className="newContactLabel" htmlFor="contact-service">
+							Service
+						</label>
+						<select
+							id="contact-service"
+							className="newContactSelect"
+							defaultValue=""
+							{...register("service", {
+								required: "Please choose a service.",
+							})}
+						>
+							<option value="" disabled>
+								Select a service
+							</option>
+							{services.map((service) => (
+								<option key={service} value={service}>
+									{service}
+								</option>
+							))}
+						</select>
+						{errors.service && (
+							<span className="newContactError">{errors.service.message}</span>
+						)}
+					</div>
+				</div>
+
+				<div className="newContactField">
+					<label className="newContactLabel" htmlFor="contact-message">
+						Message
+					</label>
+					<textarea
+						id="contact-message"
+						className="newContactTextarea"
+						placeholder="Tell us what you need cleaned and any timing details."
+						rows={6}
+						{...register("message", {
+							required: "Message is required.",
+						})}
+					/>
+					{errors.message && (
+						<span className="newContactError">{errors.message.message}</span>
+					)}
+				</div>
+
+				<input
+					className="newContactHiddenField"
+					tabIndex={-1}
+					autoComplete="off"
+					aria-hidden="true"
+					{...register("website")}
+				/>
+
+				{isSuccess && (
+					<MessageBar messageBarType={MessageBarType.success}>
+						Thanks. Your message has been sent to Klean King.
+					</MessageBar>
+				)}
+				{isError && (
+					<MessageBar messageBarType={MessageBarType.error}>
+						Your message could not be sent. Please call 318-387-9000 or email
+						{" "}
+						kleankingcarpet@att.net.
+					</MessageBar>
+				)}
+
+				<button className="newContactSubmit" type="submit" disabled={isSubmitting}>
+					{isSubmitting ? "Sending..." : "Request Free Estimate"}
+				</button>
+			</form>
 		</div>
 	);
 };

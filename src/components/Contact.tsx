@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NewContactForm } from "./NewContactForm";
 import { Icon } from "@fluentui/react";
 
 
 interface Props {
   images?: string[];
+  imageAltPrefix?: string;
 }
 
 function Contact(props: Props) {
@@ -35,6 +36,7 @@ function Contact(props: Props) {
       >
         {/* Left Button */}
         <button onClick={prevImage} disabled={currentIndex === 0}
+          aria-label="Show previous service photo"
           style={{
             position: "absolute",
             height:'100%',
@@ -59,7 +61,7 @@ function Contact(props: Props) {
           <img
             style={{ height: "100%", width: "100%", objectFit: "cover" }}
             src={props.images[currentIndex]}
-            alt="contact"
+            alt={`${props.imageAltPrefix || "Klean King"} example ${currentIndex + 1}`}
           />
         )}
         
@@ -67,6 +69,7 @@ function Contact(props: Props) {
         <button
           onClick={nextImage}
           disabled={props.images && currentIndex === props.images.length - 1}
+          aria-label="Show next service photo"
           style={{
             position: "absolute",
             height:'100%',

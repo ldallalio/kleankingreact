@@ -197,6 +197,9 @@ li.active a {
 		width: 70px;
 		height: 70px;
 		margin-top: 40px;
+		background: transparent;
+		border: none;
+		color: black;
 	}
 
 	.mobileMenu {
@@ -275,8 +278,7 @@ li.active a {
 /* ********************************************************************** */
 
 .heroContainer {
-	height: calc(65vh - 138px);
-	/* background-image: url(./assets/images/videoforKK.MOV); */
+	min-height: clamp(34rem, 72vh, 46rem);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -285,27 +287,44 @@ li.active a {
 	animation-duration: 2s;
 	justify-content: flex-end;
 	position: relative;
+	isolation: isolate;
+}
+
+.heroContainer::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(90deg,
+			rgba(5, 23, 45, 0.78) 0%,
+			rgba(5, 23, 45, 0.56) 36%,
+			rgba(5, 23, 45, 0.22) 62%,
+			rgba(5, 23, 45, 0.08) 100%);
+	z-index: 0;
+	pointer-events: none;
 }
 
 .heroContent {
-	position: absolute;
+	position: relative;
 	display: flex;
-	justify-content: flex-end;
-	background: rgb(255, 255, 255);
-	background: linear-gradient(-90deg,
-			rgba(255, 255, 255, 1) 0%,
-			rgba(255, 255, 255, 0) 100%);
+	align-items: flex-end;
+	justify-content: flex-start;
 	width: 100%;
+	min-height: inherit;
 	z-index: 100;
-	height: calc(65vh - 138px);
+	box-sizing: border-box;
+	padding: clamp(1.5rem, 4vw, 4rem);
 }
 
 .heroButtons {
 	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	gap: 1.6rem;
-
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	gap: 0.85rem;
+	align-items: flex-start;
+	width: 100%;
+	margin-top: 1.5rem;
+	box-sizing: border-box;
 }
 
 .heroButton:first-child {
@@ -314,46 +333,93 @@ li.active a {
 }
 
 .heroButton {
-	padding: 0.8em;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.9rem 1.2rem;
 	background-color: rgb(209, 29, 35);
 	color: white;
-	font-weight: bold;
+	font-weight: 700;
 	border: none;
-	font-size: 1.6em;
-	width: 500px;
+	border-radius: 999px;
+	font-size: 0.88rem;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	width: auto;
+	min-width: 13.5rem;
+	max-width: 100%;
+	box-shadow: 0 18px 40px rgba(4, 13, 29, 0.18);
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+	line-height: 1.2;
+	text-align: center;
+	white-space: normal;
+	box-sizing: border-box;
 }
 
 @media screen and (max-width: 550px) {
 	.heroButton {
-		width: auto;
-		font-size: 1.3em;
+		min-width: 0;
+		width: 100%;
 	}
 }
 
 .heroButton:hover {
-	transition: 0.8ms;
 	background-color: gold;
 	color: black;
-
+	transform: translateY(-1px);
 }
 
 .heroText {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
-	padding-top: 8rem;
-	width: 35em;
-	margin-left: 8rem;
+	width: min(100%, 35rem);
+	max-inline-size: 35rem;
+	margin: 0;
+	padding: clamp(1.25rem, 2.2vw, 2rem);
+	background: linear-gradient(180deg,
+			rgba(9, 30, 60, 0.84) 0%,
+			rgba(9, 30, 60, 0.72) 100%);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 1.25rem;
+	backdrop-filter: blur(8px);
+	box-shadow: 0 24px 60px rgba(5, 14, 30, 0.32);
+	box-sizing: border-box;
+}
+
+.heroEyebrow {
+	margin: 0 0 0.65rem;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.74);
 }
 
 .heroText h1 {
-	font-size: 4rem;
-	font-weight: bold;
-	line-height: 80px;
-	color: rgb(22, 70, 135);
-	text-shadow: rgba(8, 7, 7, 0.198) 0.1em 0.05em 0.1em;
-	margin-bottom: 1rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+	font-size: clamp(2.35rem, 4vw, 3.9rem);
+	font-weight: 700;
+	line-height: 0.95;
+	letter-spacing: -0.045em;
+	color: white;
+	text-shadow: none;
+	margin: 0 0 1rem;
+}
+
+.heroHeadlineLine {
+	display: block;
+	white-space: nowrap;
+}
+
+.heroSubtitle {
+	font-size: 0.98rem;
+	line-height: 1.55;
+	max-inline-size: 28ch;
+	color: rgba(255, 255, 255, 0.9);
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .heroText .getQuote a {
@@ -375,33 +441,62 @@ li.active a {
 
 @media screen and (max-width: 650px) {
 	.heroContainer {
-		/* background-image: url(./assets/images/KK\ Website\ video.gif); */
-		background-size: cover;
 		background-position: top;
+		min-height: 40rem;
+	}
+
+	.heroContainer::before {
+		background:
+			linear-gradient(180deg,
+				rgba(5, 23, 45, 0.76) 0%,
+				rgba(5, 23, 45, 0.56) 48%,
+				rgba(5, 23, 45, 0.44) 100%);
 	}
 
 	.heroContent {
-		width: 100%;
-		background: rgb(0, 0, 0);
-		background: linear-gradient(90deg,
-				rgba(0, 0, 0, 0.393) 0%,
-				rgba(255, 255, 255, 0) 100%);
+		padding: 1rem;
 	}
 
-	.heroText {
-		text-align: center;
-		width: 100%;
-		margin: 0;
-	}
-
-	.heroText .getQuote {
-		margin-left: 8rem;
+	.heroEyebrow {
+		font-size: 0.74rem;
+		letter-spacing: 0.11em;
 	}
 
 	.heroText h1 {
-		font-size: 3.5rem;
-		color: white;
-		text-shadow: rgba(0, 0, 0, 0.254) 0.1em 0.1em 0.2em;
+		font-size: clamp(1.85rem, 8.8vw, 2.45rem);
+		line-height: 0.98;
+	}
+
+	.heroHeadlineLine {
+		white-space: normal;
+	}
+
+	.heroSubtitle {
+		font-size: 0.92rem;
+		line-height: 1.5;
+		max-inline-size: 26ch;
+	}
+
+	.heroText {
+		width: 100%;
+		max-inline-size: none;
+		padding: 1rem 0.95rem;
+		border-radius: 1rem;
+	}
+
+	.heroButtons {
+		align-items: stretch;
+		flex-direction: column;
+		gap: 0.65rem;
+		margin-top: 1.15rem;
+	}
+
+	.heroButton {
+		width: 100%;
+		min-width: 0;
+		padding: 0.82rem 0.95rem;
+		font-size: 0.8rem;
+		letter-spacing: 0.025em;
 	}
 
 	#getQuote a:hover {
@@ -749,6 +844,120 @@ textarea {
 	text-align: center;
 }
 
+.newContactFormCard {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: min(92vw, 720px);
+	padding: 32px;
+	border-radius: 18px;
+	background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
+	box-shadow: 0 18px 45px rgba(5, 26, 69, 0.12);
+	box-sizing: border-box;
+}
+
+.newContactFormTitle {
+	margin: 0;
+	color: rgb(4, 12, 122);
+	text-align: center;
+	font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.newContactFormIntro {
+	margin: 0;
+	color: rgba(4, 12, 122, 0.86);
+	text-align: center;
+	font-size: 1.05rem;
+	line-height: 1.6;
+}
+
+.newContactForm {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.newContactFormGrid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.newContactField {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.newContactLabel {
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: rgb(4, 12, 122);
+}
+
+.newContactInput,
+.newContactSelect,
+.newContactTextarea {
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid rgba(180, 182, 207, 0.9);
+	border-radius: 12px;
+	box-sizing: border-box;
+	font-size: 1rem;
+	color: rgb(4, 12, 122);
+	background-color: white;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newContactInput:focus,
+.newContactSelect:focus,
+.newContactTextarea:focus {
+	outline: none;
+	border-color: rgb(22, 70, 135);
+	box-shadow: 0 0 0 3px rgba(22, 70, 135, 0.12);
+}
+
+.newContactTextarea {
+	resize: vertical;
+	min-height: 150px;
+}
+
+.newContactError {
+	font-size: 0.9rem;
+	color: rgb(209, 29, 35);
+}
+
+.newContactSubmit {
+	align-self: flex-start;
+	padding: 0.95em 1.3em;
+	background-color: rgb(209, 29, 35);
+	color: white;
+	font-weight: 700;
+	border-radius: 10px;
+	border: 2px solid rgb(209, 29, 35);
+	font-size: 1rem;
+	transition: background-color 0.2s ease, color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.newContactSubmit:hover:not(:disabled) {
+	background-color: white;
+	color: rgb(22, 70, 135);
+	border-color: rgb(209, 29, 35);
+}
+
+.newContactSubmit:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+.newContactHiddenField {
+	position: absolute;
+	left: -9999px;
+	opacity: 0;
+	pointer-events: none;
+}
+
 @media screen and (max-width: 800px) {
 	.contact {
 		display: flex;
@@ -772,6 +981,19 @@ textarea {
 	.form button {
 		margin-left: -75.5%;
 	}
+
+	.newContactFormCard {
+		padding: 24px 18px;
+	}
+
+	.newContactFormGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.newContactSubmit {
+		width: 100%;
+		align-self: stretch;
+	}
 }
 
 /* ********************************************************************** */
@@ -789,13 +1011,14 @@ textarea {
 	min-height: 300px;
 	color: white;
 	padding: 0 6em 0 6em;
+	gap: 1.5rem;
 }
 
 .estimateContainer h2 {
 	padding: 0px;
 	font-size: 32px;
 	max-width: 500px;
-	min-width: 375px;
+	min-width: 0;
 }
 
 .estimateContainer button {
@@ -834,7 +1057,13 @@ textarea {
 	}
 
 	.estimateContainer button {
-		margin-top: -50px;
+		margin-top: 0;
+		width: 100%;
+		max-width: 18rem;
+	}
+
+	.estimateContainer h2 {
+		width: 100%;
 	}
 }
 
@@ -1017,10 +1246,30 @@ textarea {
 	max-height: 275px;
 }
 
+.pageTitleOverlay {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
 .pageTitle h1 {
 	color: white;
-	font-size: 4.5em;
+	font-size: clamp(2rem, 5vw, 4.5em);
 	text-align: center;
+	margin: 0;
+}
+
+.pageTitleOverlay p {
+	color: rgba(255, 255, 255, 0.92);
+	font-size: 1rem;
+	text-align: center;
+	margin: 0.9rem 0 0;
 }
 
 .servicePageContent {
@@ -1086,6 +1335,69 @@ textarea {
 .servicePageSidebar li:hover {
 	transform: scale(1.2) !important;
 	cursor: pointer;
+}
+
+.serviceSidebarLink {
+	color: rgb(4, 12, 122);
+	display: block;
+}
+
+.seoSection {
+	width: min(1100px, calc(100% - 40px));
+	margin: 0 auto 2.5rem;
+	padding: 1.5rem;
+	background: #ffffff;
+	border-radius: 16px;
+	box-shadow: 0 12px 30px rgba(5, 26, 69, 0.08);
+	box-sizing: border-box;
+}
+
+.seoSection h1,
+.seoSection h2 {
+	color: rgb(4, 12, 122);
+	margin-top: 0;
+}
+
+.seoSection p {
+	color: #243858;
+	line-height: 1.8;
+	font-size: 1rem;
+}
+
+.seoSection a {
+	color: rgb(22, 70, 135);
+	font-weight: 700;
+}
+
+.relatedServicesGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+	margin-top: 1.25rem;
+}
+
+.relatedServiceCard {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem;
+	border-radius: 14px;
+	border: 1px solid rgba(22, 70, 135, 0.14);
+	background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+	color: rgb(4, 12, 122);
+	box-shadow: 0 6px 18px rgba(5, 26, 69, 0.06);
+}
+
+.relatedServiceCard span {
+	color: #51637d;
+	line-height: 1.55;
+}
+
+.serviceButtonLink {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
 }
 
 /* ********************************************************************** */
@@ -1185,41 +1497,51 @@ textarea {
 
 @media screen and (max-width: 800px) {
 	.servicesButtons {
-		grid-template-columns: repeat(2, 1fr);
-		padding: 0;
+		grid-template-columns: 1fr;
+		padding: 0 12px;
+		width: min(100%, 22rem);
+		box-sizing: border-box;
 	}
 
 	.serviceButton {
 		font-size: 1em;
-		width: 200px;
+		width: 100%;
 	}
 }
 
 
 .aboutVideoSection {
-	min-height: 600px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 1rem;
+	width: min(1120px, calc(100% - 2rem));
+	display: block;
+	margin: clamp(1rem, 4vw, 3rem) auto;
+	min-height: 0;
 }
 
 .aboutVideo {
-	object-fit: cover;
-	border-radius: 10px;
-	border: 1rem solid red;
-	min-height: 300px;
-	width:700px;
+	display: block;
+	height: auto;
+	max-width: 100%;
+	width: min(100%, 700px);
+	margin: 0 auto;
+	object-fit: contain;
+	border-radius: 1.25rem;
+	border: 0;
+	box-shadow: 0 24px 54px rgba(9, 30, 60, 0.14);
 }
 
 @media screen and (max-width: 800px) {
-	.aboutVideoSection{
-		margin:0;
-		height:300px;
-		min-height: 450px;
+	.aboutVideoSection {
+		width: calc(100% - 1rem);
+		margin: 0.75rem auto 1.5rem;
 	}
+
 	.aboutVideo {
-		width: 80%;
+		width: 100%;
+		border-radius: 1rem;
+	}
+
+	.seoSection {
+		width: calc(100% - 24px);
+		padding: 1.25rem;
 	}
 }
